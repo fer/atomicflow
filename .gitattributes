@@ -1,0 +1,7 @@
+# Enforce Unix-style line endings for consistency
+* text=auto eol=lf
+
+# Improve diffs for structured files
+*.json diff=json
+*.yml diff=yaml
+*.md diff=markdown
