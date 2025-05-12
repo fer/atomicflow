@@ -2,4 +2,4 @@
 
 bolt.new generated code for landing page. 
 
-atomicflow.pages.dev
+[atomicflow.pages.dev]
