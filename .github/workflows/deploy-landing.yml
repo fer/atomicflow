@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'frontend/landing/**'
-  workflow_dispatch:  # <-- Manual trigger enabled here
+  workflow_dispatch: # Manual trigger
 
 jobs:
   build-and-deploy:
@@ -29,10 +29,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: atomicflow
-          directory: dist
+      - name: Install wrangler@4
+        run: npm install -g wrangler@4
+
+      - name: Deploy with wrangler
+        run: wrangler pages deploy dist --project-name=atomicflow --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
