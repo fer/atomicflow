@@ -28,10 +28,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: atomicflow
-          directory: dist
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build # ← this must produce the dist/ directory
+
+      - name: Publish with Wrangler
+        run: npx wrangler@4 pages publish dist --project-name=atomicflow --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
