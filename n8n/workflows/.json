@@ -1,235 +1,214 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
-    "Manual Trigger": {
+    "n8n": {
       "main": [
         [
           {
-            "node": "Set Configuration",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get Access Token": {
+    "Globals": {
       "main": [
         [
           {
-            "node": "Config Groups URL",
+            "node": "Get file data",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request - Get Events": {
+    "Get File": {
       "main": [
         [
           {
-            "node": "Check if Events pagination?",
+            "node": "Merge Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set next URL": {
+    "File is new": {
       "main": [
         [
           {
-            "node": "Config Events URL",
+            "node": "Create new file",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Config Events URL": {
-      "main": [
-        []
-      ]
-    },
-    "Config Members URL": {
+    "Merge Items": {
       "main": [
         [
           {
-            "node": "HTTP Request - Get Members",
+            "node": "isDiffOrNew",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request - Get Members": {
+    "isDiffOrNew": {
       "main": [
         [
           {
-            "node": "Check if Members pagination?",
+            "node": "Check Status",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set next URL1": {
+    "Check Status": {
       "main": [
         [
           {
-            "node": "Config Members URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check if Events pagination?": {
-      "main": [
-        [
-          {
-            "node": "Set next URL",
+            "node": "Same file - Do nothing",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Load Enums",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set next URL2": {
-      "main": [
-        [
-          {
-            "node": "Config Groups URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Config Groups URL": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request - Get Groups",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request - Get Groups": {
-      "main": [
-        [
-          {
-            "node": "Check if Groups pagination?",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check if Groups pagination?": {
-      "main": [
-        [
-          {
-            "node": "Set next URL2",
+            "node": "File is different",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Config Members URL",
+            "node": "File is new",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set Configuration": {
+    "Get file data": {
       "main": [
         [
           {
-            "node": "Get Access Token",
+            "node": "If file too large",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check if Members pagination?": {
+    "Create new file": {
       "main": [
         [
           {
-            "node": "Set next URL1",
+            "node": "Return",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Globals",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Merge Items",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "n8n",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "File is different": {
+      "main": [
+        [
+          {
+            "node": "Edit existing file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If file too large": {
+      "main": [
+        [
+          {
+            "node": "Get File",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Config Events URL",
+            "node": "Merge Items",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Load Enums": {
+    "Edit existing file": {
       "main": [
         [
           {
-            "node": "Combine all data",
+            "node": "Return",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Form": {
+    "On clicking 'execute'": {
       "main": [
         [
           {
-            "node": "Respond to Webhook",
+            "node": "n8n",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "On form submission": {
+    "Same file - Do nothing": {
       "main": [
         [
           {
-            "node": "Form",
+            "node": "Return",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request": {
+    "Return": {
       "main": [
         [
           {
-            "node": "Form1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Respond to Webhook": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request",
+            "node": "Loop Over Items",
             "type": "main",
             "index": 0
           }
@@ -237,576 +216,448 @@
       ]
     }
   },
-  "createdAt": "2025-05-08T18:40:48.890Z",
-  "id": "pzDoVQJxx2m0sBXP",
+  "createdAt": "2025-05-08T18:40:48.949Z",
+  "id": "m8tnzF1JUqxrxYPY",
   "meta": null,
-  "name": "⛨ Public API Event Logs",
+  "name": "⬆️ Backup n8n workflows to Github",
   "nodes": [
     {
       "parameters": {},
-      "name": "Manual Trigger",
+      "id": "90631709-cf8a-401e-b03a-e4f5a45d1145",
+      "name": "On clicking 'execute'",
       "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
       "position": [
-        -600,
-        60
+        500,
+        200
       ],
-      "id": "ed4f359f-67e6-43e4-b17a-cdd4c6333016"
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "requestMethod": "POST",
-        "url": "={{ $json.identity_url }}/connect/token",
-        "options": {},
-        "bodyParametersUi": {
-          "parameter": [
-            {
-              "name": "client_id",
-              "value": "={{ $json.client_id }}"
-            },
-            {
-              "name": "client_secret",
-              "value": "={{ $json.client_secret }}"
-            },
-            {
-              "name": "scope",
-              "value": "api.organization"
-            },
-            {
-              "name": "grant_type",
-              "value": "client_credentials"
-            }
-          ]
-        },
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Content-Type",
-              "value": "application/x-www-form-urlencoded"
-            }
-          ]
-        }
+        "content": "## Subworkflow",
+        "height": 691,
+        "width": 2287,
+        "color": 6
       },
-      "name": "Get Access Token",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        -200,
-        60
-      ],
-      "id": "1d2d9b06-3d20-428b-ae79-d702bc63ff34"
-    },
-    {
-      "parameters": {
-        "url": "={{$node[\"Config Events URL\"].json[\"next\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer  {{ $('Get Access Token').item.json.access_token }}"
-            }
-          ]
-        },
-        "queryParametersUi": {
-          "parameter": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
-        }
-      },
-      "name": "HTTP Request - Get Events",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        220,
-        620
-      ],
-      "id": "2a06a08e-58eb-4f9e-8ca5-5fb3e8db75be"
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "continuationToken",
-              "value": "={{$node[\"HTTP Request - Get Events\"].json[\"continuationToken\"]}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Set next URL",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        600,
-        620
-      ],
-      "executeOnce": true,
-      "id": "75615dfe-2e94-4c9d-95e6-21c48f1c1469"
-    },
-    {
-      "parameters": {
-        "functionCode": "const enums = $node[\"Load Enums\"].json;\n\n// Build member map properly across ALL paginated responses:\nconst members = $items(\"HTTP Request - Get Members\");\n\nconst userIdToEmail = {};\nconst memberIdToEmail = {};\n\nfor (const page of members) {\n  const pageData = page.json.data || [];\n  for (const member of pageData) {\n    const userId = member.userId;\n    const memberId = member.id;\n    const memberEmail = member.email || (member.user && member.user.email) || \"Unknown member\";\n    \n    if (userId) {\n      userIdToEmail[userId] = memberEmail;\n    }\n    if (memberId) {\n      memberIdToEmail[memberId] = memberEmail;\n    }\n  }\n}\n\nconst groups = $items(\"HTTP Request - Get Groups\");\n\n\nconst groupMap = {};\n\nfor (const page of groups) {\n  const pageData = page.json.data || [];\n  for (const group of pageData) {\n    const groupId = group.id;  \n    groupMap[groupId] = group.name;\n  }\n}\n\nconsole.log('>>>>', groupMap)\n\n\n// Combine Events and enrich with member names\nconst allData = [];\nlet counter = 0;\n\ndo {\n  try {\n    const items = $items(\"HTTP Request - Get Events\", 0, counter).map(item => item.json.data);\n    const mappedItems = items[0].map(item => {\n      return {\n        json: {\n          ...item,\n          type: enums.EventType[item.type] || item.type,\n          device: enums.DeviceType[item.device] || item.device,\n          actingUserId: userIdToEmail[item.actingUserId] || item.actingUserId,\n          memberId: memberIdToEmail[item.memberId] || item.memberId,\n          groupId: groupMap[item.groupId] || item.groupId\n        }\n      };\n    });\n    allData.push(...mappedItems);\n  } catch (error) {\n    return allData;\n  }\n  counter++;\n} while (true);"
-      },
-      "name": "Combine all data",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [
-        600,
-        900
-      ],
-      "id": "23e2de89-da22-4f17-8b24-f379167f8360"
-    },
-    {
-      "parameters": {
-        "content": "## Fetch Events",
-        "height": 220,
-        "width": 760
-      },
+      "id": "302bd8a5-92f9-45a2-bf7e-8aacf2cd38ee",
+      "name": "Sticky Note",
       "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
       "position": [
-        0,
-        560
+        1660,
+        80
       ],
-      "id": "98b22b4b-1ef9-4613-a3ee-03644e356cff",
-      "name": "Sticky Note"
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "functionCode": "const config = $items(\"Set Configuration\");\n\nlet next = config[0].json.api_url + '/public/events';\n\nif (items[0].json.continuationToken) {\n  next += '?continuationToken=' + items[0].json.continuationToken;\n}\n\nreturn [{ json: { next: next } }];"
+        "filters": {},
+        "requestOptions": {}
       },
-      "name": "Config Events URL",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
+      "id": "f03914d5-b6bd-4529-b431-177417fd2ae3",
+      "name": "n8n",
+      "type": "n8n-nodes-base.n8n",
       "position": [
-        40,
-        620
+        720,
+        300
       ],
-      "id": "e8793929-ee98-4831-8b02-d9d9d1178955"
-    },
-    {
-      "parameters": {
-        "functionCode": "const config = $items(\"Set Configuration\");\n\nlet next = config[0].json.api_url + '/public/members';\n\nif (items[0].json.continuationToken) {\n  next += '?continuationToken=' + items[0].json.continuationToken;\n}\n\nreturn [{ json: { next: next } }];"
-      },
-      "name": "Config Members URL",
-      "type": "n8n-nodes-base.function",
       "typeVersion": 1,
-      "position": [
-        40,
-        340
-      ],
-      "id": "eed8801e-9197-4e48-b2fe-5181b378d3a6"
-    },
-    {
-      "parameters": {
-        "url": "={{$node[\"Config Members URL\"].json[\"next\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer  {{ $('Get Access Token').item.json.access_token }}"
-            }
-          ]
-        },
-        "queryParametersUi": {
-          "parameter": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
+      "retryOnFail": true,
+      "maxTries": 5,
+      "credentials": {
+        "n8nApi": {
+          "id": "bvv7auGFkoB3ieA4",
+          "name": "n8n account"
         }
-      },
-      "name": "HTTP Request - Get Members",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        220,
-        340
-      ],
-      "id": "7af3172d-5854-41dc-b4f5-e18a26cb51af"
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "continuationToken",
-              "value": "={{$node[\"HTTP Request - Get Members\"].json[\"continuationToken\"]}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Set next URL1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        600,
-        340
-      ],
-      "executeOnce": true,
-      "id": "49374c9a-f43b-4e63-8df4-01742cf85ca2"
-    },
-    {
-      "parameters": {
-        "content": "## Fetch Members",
-        "height": 220,
-        "width": 760,
-        "color": 5
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        0,
-        280
-      ],
-      "id": "fa021ba0-9fe3-4d5d-b342-6532bb28a349",
-      "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"HTTP Request - Get Events\"].json[\"continuationToken\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "name": "Check if Events pagination?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        400,
-        620
-      ],
-      "id": "85bad6c7-40c3-4e13-a8e8-4b61a62ad82e"
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "continuationToken",
-              "value": "={{$node[\"HTTP Request - Get Groups\"].json[\"continuationToken\"]}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Set next URL2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        600,
-        60
-      ],
-      "executeOnce": true,
-      "id": "ffb92886-a3a8-4694-aef7-41a25a1b12ad"
-    },
-    {
-      "parameters": {
-        "functionCode": "const config = $items(\"Set Configuration\");\n\nlet next = config[0].json.api_url + '/public/groups';\n\nif (items[0].json.continuationToken) {\n  next += '?continuationToken=' + items[0].json.continuationToken;\n}\n\nreturn [{ json: { next: next } }];"
-      },
-      "name": "Config Groups URL",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [
-        40,
-        60
-      ],
-      "id": "a534cc1c-a007-4a31-b64a-e1c716cd7672"
-    },
-    {
-      "parameters": {
-        "url": "={{$node[\"Config Groups URL\"].json[\"next\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer  {{ $('Get Access Token').item.json.access_token }}"
-            }
-          ]
-        },
-        "queryParametersUi": {
-          "parameter": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
-        }
-      },
-      "name": "HTTP Request - Get Groups",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        220,
-        60
-      ],
-      "id": "d26c47cb-f988-4352-8f9d-fff91269cb1c"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"HTTP Request - Get Groups\"].json[\"continuationToken\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "name": "Check if Groups pagination?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        400,
-        60
-      ],
-      "id": "22c3a1cb-3b20-4084-9703-ad8d812fa24d"
-    },
-    {
-      "parameters": {
-        "content": "## Fetch Groups",
-        "height": 220,
-        "width": 760,
-        "color": 5
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "57839a0b-c7e3-44a9-8c0f-a0ce7b4c74a4",
-      "name": "Sticky Note2"
-    },
-    {
-      "parameters": {
-        "content": "## To do\n- [ ] Start / End date\n- [ ] LiveEvent Loop\n- [ ] Entry parameters \n  - [ ] Self hosted\n- [ ] Run/Automate with Docker\n- [ ] open ticket to n8n since the BW node isn't handling pagination\n- [ ] Write to disk in different formats",
-        "height": 380,
-        "width": 520,
-        "color": 4
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -600,
-        240
-      ],
-      "id": "69c4bf23-9192-4414-aad1-93f625cbd4cd",
-      "name": "Sticky Note3"
+      }
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "51c8b47a-18de-4cfd-8adc-46403036eed2",
-              "name": "client_id",
-              "value": "organization.9d3210e3-385c-4c76-ad72-b1f5013a8cc2",
-              "type": "string"
-            },
-            {
-              "id": "8d1bb5ab-f135-4164-a74b-d0a2bfdd93b9",
-              "name": "client_secret",
-              "value": "YDAI5PxNcj9EktCvFpxzqmNhlJ7KiJ",
-              "type": "string"
-            },
-            {
-              "id": "7ae5465f-ee2f-4544-a639-53f0e12c23e7",
-              "name": "identity_url",
-              "value": "https://identity.bitwarden.eu",
-              "type": "string"
-            },
-            {
-              "id": "f7896f5a-fef5-4d9c-b633-83fbd01942f9",
-              "name": "api_url",
-              "value": "https://api.bitwarden.eu",
-              "type": "string"
+              "id": "8d513345-6484-431f-afb7-7cf045c90f4f",
+              "name": "Done",
+              "type": "boolean",
+              "value": true
             }
           ]
         },
-        "options": {
-          "ignoreConversionErrors": false
-        }
+        "options": {}
       },
+      "id": "6b990936-7a87-49ff-a70f-4aa06fb7542c",
+      "name": "Return",
       "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
       "position": [
-        -400,
-        60
+        3720,
+        380
       ],
-      "id": "939e9f5d-eec9-49c4-a8cf-d42cd80fe498",
-      "name": "Set Configuration"
+      "typeVersion": 3.3
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.download_url }}",
+        "options": {}
+      },
+      "id": "e932aaa5-c0f8-4232-9f56-a7c9e3180b02",
+      "name": "Get File",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        2400,
+        240
+      ],
+      "typeVersion": 4.2
     },
     {
       "parameters": {
         "conditions": {
-          "string": [
+          "options": {
+            "version": 1,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "combinator": "and",
+          "conditions": [
             {
-              "value1": "={{ $node[\"HTTP Request - Get Members\"].json[\"continuationToken\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "name": "Check if Members pagination?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        400,
-        340
-      ],
-      "id": "c1952070-6d49-4bf5-acd8-eefe35f0ba50"
-    },
-    {
-      "parameters": {
-        "jsCode": "return [{\n  json: {\n    DeviceType: {\n      0: \"Android\",\n      1: \"iOS\",\n      2: \"ChromeExtension\",\n      3: \"FirefoxExtension\",\n      4: \"OperaExtension\",\n      5: \"EdgeExtension\",\n      6: \"WindowsDesktop\",\n      7: \"MacOsDesktop\",\n      8: \"LinuxDesktop\",\n      9: \"ChromeBrowser\",\n      10: \"FirefoxBrowser\",\n      11: \"OperaBrowser\",\n      12: \"EdgeBrowser\",\n      13: \"IEBrowser\",\n      14: \"UnknownBrowser\",\n      15: \"AndroidAmazon\",\n      16: \"UWP\",\n      17: \"SafariBrowser\",\n      18: \"VivaldiBrowser\",\n      19: \"VivaldiExtension\",\n      20: \"SafariExtension\",\n      21: \"BraveBrowser\",\n      22: \"BraveExtension\",\n    },\n    EventType: {\n      1000: \"User_LoggedIn\",\n      1001: \"User_ChangedPassword\",\n      1002: \"User_Updated2fa\",\n      1003: \"User_Disabled2fa\",\n      1004: \"User_Recovered2fa\",\n      1005: \"User_FailedLogIn\",\n      1006: \"User_FailedLogIn2fa\",\n      1007: \"User_ClientExportedVault\",\n      1008: \"User_UpdatedTempPassword\",\n      1009: \"User_MigratedKeyToKeyConnector\",\n      1010: \"User_RequestedDeviceApproval\",\n      1011: \"User_TdeOffboardingPasswordSet\",\n      1100: \"Cipher_Created\",\n      1101: \"Cipher_Updated\",\n      1102: \"Cipher_Deleted\",\n      1103: \"Cipher_AttachmentCreated\",\n      1104: \"Cipher_AttachmentDeleted\",\n      1105: \"Cipher_Shared\",\n      1106: \"Cipher_UpdatedCollections\",\n      1107: \"Cipher_ClientViewed\",\n      1108: \"Cipher_ClientToggledPasswordVisible\",\n      1109: \"Cipher_ClientToggledHiddenFieldVisible\",\n      1110: \"Cipher_ClientToggledCardCodeVisible\",\n      1111: \"Cipher_ClientCopiedPassword\",\n      1112: \"Cipher_ClientCopiedHiddenField\",\n      1113: \"Cipher_ClientCopiedCardCode\",\n      1114: \"Cipher_ClientAutofilled\",\n      1115: \"Cipher_SoftDeleted\",\n      1116: \"Cipher_Restored\",\n      1117: \"Cipher_ClientToggledCardNumberVisible\",\n      1118: \"Cipher_ClientToggledTOTPSeedVisible\",\n      1300: \"Collection_Created\",\n      1301: \"Collection_Updated\",\n      1302: \"Collection_Deleted\",\n      1400: \"Group_Created\",\n      1401: \"Group_Updated\",\n      1402: \"Group_Deleted\",\n      1500: \"OrganizationUser_Invited\",\n      1501: \"OrganizationUser_Confirmed\",\n      1502: \"OrganizationUser_Updated\",\n      1503: \"OrganizationUser_Removed\",\n      1504: \"OrganizationUser_UpdatedGroups\",\n      1505: \"OrganizationUser_UnlinkedSso\",\n      1506: \"OrganizationUser_ResetPassword_Enroll\",\n      1507: \"OrganizationUser_ResetPassword_Withdraw\",\n      1508: \"OrganizationUser_AdminResetPassword\",\n      1509: \"OrganizationUser_ResetSsoLink\",\n      1510: \"OrganizationUser_FirstSsoLogin\",\n      1511: \"OrganizationUser_Revoked\",\n      1512: \"OrganizationUser_Restored\",\n      1513: \"OrganizationUser_ApprovedAuthRequest\",\n      1514: \"OrganizationUser_RejectedAuthRequest\",\n      1515: \"OrganizationUser_Deleted\",\n      1516: \"OrganizationUser_Left\",\n      1600: \"Organization_Updated\",\n      1601: \"Organization_PurgedVault\",\n      1602: \"Organization_ClientExportedVault\",\n      1603: \"Organization_VaultAccessed\",\n      1604: \"Organization_EnabledSso\",\n      1605: \"Organization_DisabledSso\",\n      1606: \"Organization_EnabledKeyConnector\",\n      1607: \"Organization_DisabledKeyConnector\",\n      1608: \"Organization_SponsorshipsSynced\",\n      1609: \"Organization_CollectionManagementUpdated\",\n      1700: \"Policy_Updated\",\n      1800: \"ProviderUser_Invited\",\n      1801: \"ProviderUser_Confirmed\",\n      1802: \"ProviderUser_Updated\",\n      1803: \"ProviderUser_Removed\",\n      1900: \"ProviderOrganization_Created\",\n      1901: \"ProviderOrganization_Added\",\n      1902: \"ProviderOrganization_Removed\",\n      1903: \"ProviderOrganization_VaultAccessed\",\n      2000: \"OrganizationDomain_Added\",\n      2001: \"OrganizationDomain_Removed\",\n      2002: \"OrganizationDomain_Verified\",\n      2003: \"OrganizationDomain_NotVerified\",\n      2100: \"Secret_Retrieved\"\n    }\n  }\n}]"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        400,
-        900
-      ],
-      "id": "5a872387-2279-4d99-aae5-871a07a55c58",
-      "name": "Load Enums"
-    },
-    {
-      "parameters": {
-        "content": "## Combine Data",
-        "height": 220,
-        "width": 760
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        840
-      ],
-      "typeVersion": 1,
-      "id": "dfefdbf5-dc7e-4998-bbef-c674944487b1",
-      "name": "Sticky Note4"
-    },
-    {
-      "parameters": {
-        "content": "## Setup Forms\n- [ ] Enter Credentials\n- [ ] Enter Monitor Settings",
-        "height": 260,
-        "width": 500
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -640,
-        -440
-      ],
-      "id": "4dd21351-6390-4b13-94b2-c2e9869d02b9",
-      "name": "Sticky Note5"
-    },
-    {
-      "parameters": {
-        "formFields": {
-          "values": [
+              "id": "45ce825e-9fa6-430c-8931-9aaf22c42585",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.content }}",
+              "rightValue": ""
+            },
             {
-              "fieldLabel": "client_id",
-              "requiredField": true
+              "id": "9619a55f-7fb1-4f24-b1a7-7aeb82365806",
+              "operator": {
+                "type": "string",
+                "operation": "notExists",
+                "singleValue": true
+              },
+              "leftValue": "={{ $json.error }}",
+              "rightValue": ""
             }
           ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.form",
-      "typeVersion": 1,
+      "id": "9b6cac06-926e-4f29-9940-1cf4a5065aa0",
+      "name": "If file too large",
+      "type": "n8n-nodes-base.if",
       "position": [
-        360,
-        -340
+        2180,
+        300
       ],
-      "id": "bced00c9-9662-4e56-9635-84cb52c66636",
-      "name": "Form",
-      "webhookId": "9a42d8fa-f0bc-4fbf-adbb-6ae671774b62"
+      "typeVersion": 2
+    },
+    {
+      "parameters": {},
+      "id": "607f391b-b884-4d6e-9c0d-0f177482e3d0",
+      "name": "Merge Items",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        2620,
+        380
+      ],
+      "typeVersion": 2
     },
     {
       "parameters": {
-        "operation": "completion",
-        "completionTitle": "sacabo",
-        "options": {}
+        "jsCode": "const orderJsonKeys = (jsonObj) => {\n  const ordered = {};\n  Object.keys(jsonObj).sort().forEach(key => {\n    ordered[key] = jsonObj[key];\n  });\n  return ordered;\n}\n\n// Check if file returned with content\nif (Object.keys($input.all()[0].json).includes(\"content\")) {\n  // Decode base64 content and parse JSON\n  const origWorkflow = JSON.parse(Buffer.from($input.all()[0].json.content, 'base64').toString());\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n// No file returned / new workflow\n} else if (Object.keys($input.all()[0].json).includes(\"data\")) {\n  const origWorkflow = JSON.parse($input.all()[0].json.data);\n  const n8nWorkflow = $input.all()[1].json;\n  \n  // Order JSON objects\n  const orderedOriginal = orderJsonKeys(origWorkflow);\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n\n  // Determine difference\n  if (JSON.stringify(orderedOriginal) === JSON.stringify(orderedActual)) {\n    $input.all()[0].json.github_status = \"same\";\n  } else {\n    $input.all()[0].json.github_status = \"different\";\n    $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n  }\n  $input.all()[0].json.content_decoded = orderedOriginal;\n\n} else {\n  // Order JSON object\n  const n8nWorkflow = $input.all()[1].json;\n  const orderedActual = orderJsonKeys(n8nWorkflow);\n  \n  // Proper formatting\n  $input.all()[0].json.github_status = \"new\";\n  $input.all()[0].json.n8n_data_stringy = JSON.stringify(orderedActual, null, 2);\n}\n\n// Return items\nreturn $input.all();"
       },
-      "type": "n8n-nodes-base.form",
-      "typeVersion": 1,
+      "id": "572a4116-9050-4fdc-b334-eba37f1971f3",
+      "name": "isDiffOrNew",
+      "type": "n8n-nodes-base.code",
       "position": [
-        960,
-        -340
+        2840,
+        380
       ],
-      "id": "a69e9805-a2cf-45f1-bec8-c81f3ccdb6d8",
-      "name": "Form1",
-      "webhookId": "a2ca8389-9b51-4ea2-8322-a494df0b5da9"
+      "typeVersion": 1
     },
     {
       "parameters": {
-        "formTitle": "Continue",
-        "formDescription": "This is the form",
-        "options": {
-          "appendAttribution": true,
-          "useWorkflowTimezone": true
+        "dataType": "string",
+        "value1": "={{$json.github_status}}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "same"
+            },
+            {
+              "value2": "different",
+              "output": 1
+            },
+            {
+              "value2": "new",
+              "output": 2
+            }
+          ]
         }
       },
-      "type": "n8n-nodes-base.formTrigger",
-      "typeVersion": 2.2,
+      "id": "3aa9c59a-fd7f-4a2c-8049-84c746825457",
+      "name": "Check Status",
+      "type": "n8n-nodes-base.switch",
       "position": [
-        160,
-        -340
+        3060,
+        360
       ],
-      "id": "266af632-5f17-41b6-b518-7f2dc0585b37",
-      "name": "On form submission",
-      "webhookId": "99ff543f-39a2-4311-8209-47f67f61d6c5"
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "8b5230fb-0457-4a44-a620-67b7fa2158b9",
+      "name": "Same file - Do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        3500,
+        180
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "f6c8412d-8a5c-469c-b401-598e7a8f9f93",
+      "name": "File is different",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        3280,
+        380
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "id": "9a9d73bd-410e-40c8-8af4-3cb641c2e54a",
+      "name": "File is new",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        3280,
+        580
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Globals').item.json.repo.owner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Globals').item.json.repo.name }}"
+        },
+        "filePath": "={{ $('Globals').item.json.repo.path }}.json",
+        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "=({{$json.github_status}})"
+      },
+      "id": "b31df461-c67f-4a39-9c5c-f5019bc23c78",
+      "name": "Create new file",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        3500,
+        580
+      ],
+      "typeVersion": 1,
+      "webhookId": "21e460f7-307f-48f8-8507-79e5351b7188",
+      "credentials": {
+        "githubApi": {
+          "id": "iGQWomWxVx4FvkiE",
+          "name": "GitHub account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Globals').item.json.repo.owner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Globals').item.json.repo.name }}"
+        },
+        "filePath": "={{ $('Globals').item.json.repo.path }}{{$('Execute Workflow Trigger').first().json.id}}.json",
+        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
+      },
+      "id": "cbb1c08c-f395-46b0-8b57-018f2005938e",
+      "name": "Edit existing file",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        3500,
+        380
+      ],
+      "typeVersion": 1,
+      "webhookId": "fb94750f-7a1f-4f82-88dc-1ded4f2fa4ba",
+      "credentials": {
+        "githubApi": {
+          "id": "iGQWomWxVx4FvkiE",
+          "name": "GitHub account"
+        }
+      }
     },
     {
       "parameters": {
         "options": {}
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "id": "d15743a7-39b5-4532-9a8e-ba9e390ed0e8",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
       "position": [
-        800,
-        -340
+        940,
+        300
       ],
-      "id": "f93870c5-fa35-4294-940e-5fddd7a0c55b",
-      "name": "HTTP Request"
+      "typeVersion": 3
     },
     {
       "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 4
+            }
+          ]
+        }
+      },
+      "id": "11388680-cc9d-4a4f-aa13-9a4f177f5621",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [
+        500,
+        400
+      ],
+      "typeVersion": 1.2
+    },
+    {
+      "parameters": {
+        "content": "## Backup to GitHub \nThis workflow will backup all instance workflows to GitHub.\n\nThe files are saved `ID.json` for the filename.\n\n### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository. If it doesn't exist it will be created.\n\n\nIf your username was `john-doe` and your repository was called `n8n-backups` and you wanted the workflows to go into a `workflows` folder you would set:\n\n- repo.owner - john-doe\n- repo.name - n8n-backups\n- repo.path - workflows/\n\n\nThe workflow calls itself using a subworkflow, to help reduce memory usage.",
+        "height": 600.88409546716,
+        "width": 371.1995072042308,
+        "color": 4
+      },
+      "id": "525fd0ad-6b9e-419f-b91d-93e7da8a465d",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        20,
+        -40
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "content": "## Main workflow loop",
+        "height": 434.88564057365943,
+        "width": 886.4410237965205,
+        "color": 7
+      },
+      "id": "eeb2a4d6-273d-4e94-9c0a-b6b6cacc73dd",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        440,
+        120
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $json.repo.owner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $json.repo.name }}"
+        },
+        "filePath": "={{ $('Globals').item.json.repo.path }}{{$('Execute Workflow Trigger').first().json.id}}.json",
+        "asBinaryProperty": false,
+        "additionalParameters": {}
+      },
+      "id": "f6f492db-514b-46cd-aa19-1420d25454ff",
+      "name": "Get file data",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1960,
+        300
+      ],
+      "typeVersion": 1,
+      "alwaysOutputData": true,
+      "webhookId": "0859ac16-63f8-43e4-8d1c-142163660676",
+      "credentials": {
+        "githubApi": {
+          "id": "iGQWomWxVx4FvkiE",
+          "name": "GitHub account"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6cf546c5-5737-4dbd-851b-17d68e0a3780",
+              "name": "repo.owner",
+              "type": "string",
+              "value": "fer"
+            },
+            {
+              "id": "452efa28-2dc6-4ea3-a7a2-c35d100d0382",
+              "name": "repo.name",
+              "type": "string",
+              "value": "atomicflow"
+            },
+            {
+              "id": "81c4dc54-86bf-4432-a23f-22c7ea831e74",
+              "name": "repo.path",
+              "type": "string",
+              "value": "n8n/workflows/"
+            }
+          ]
+        },
         "options": {}
       },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.2,
+      "id": "b47ab002-a7e4-4180-9456-b3277e0888ba",
+      "name": "Globals",
+      "type": "n8n-nodes-base.set",
       "position": [
-        580,
-        -340
+        1740,
+        300
       ],
-      "id": "99d15aae-b155-4192-b920-cdb93180ba2a",
-      "name": "Respond to Webhook"
+      "typeVersion": 3.4
     }
   ],
-  "pinData": null,
+  "pinData": {},
   "settings": {
     "executionOrder": "v1"
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": [
+        16
+      ]
+    },
+    "node:Schedule Trigger1": {
+      "recurrenceRules": []
+    }
+  },
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-05-08T18:40:48.890Z",
-  "versionId": "3b0b2f89-18b1-445f-99c5-02d7b36f8f33"
+  "triggerCount": 1,
+  "updatedAt": "2025-05-12T16:12:29.982Z",
+  "versionId": "abe0501b-5108-4b06-86fe-b5bebbbbf6ef"
 }
