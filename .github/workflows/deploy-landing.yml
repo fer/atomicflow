@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'frontend/landing/**'
-  workflow_dispatch: # Manual trigger
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
         working-directory: frontend/landing
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -26,11 +26,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build project
+      - name: Build the project
         run: npm run build
-
-      - name: Install wrangler@4
-        run: npm install -g wrangler@4
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
