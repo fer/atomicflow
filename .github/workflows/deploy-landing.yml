@@ -28,10 +28,11 @@ jobs:
         working-directory: frontend/landing
         run: npm run build
 
-      - name: Install wrangler
-        run: npm install -g wrangler@4
-
-      - name: Deploy with wrangler
-        run: wrangler pages deploy frontend/landing/dist --project-name=landing --branch=main
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: landing
+          directory: dist
+          workingDirectory: frontend/landing
