@@ -31,3 +31,4 @@ CLOUDFLARE_ACCOUNT_ID
 4. Under Account Resources → `Select: Include → Specific accounts`
 5. Click Continue to summary, then Create Token
 6. Copy the token and store it securely in your GitHub repo as: `CLOUDFLARE_API_TOKEN`
+
