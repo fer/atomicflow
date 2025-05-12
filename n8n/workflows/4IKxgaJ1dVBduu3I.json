@@ -3,18 +3,18 @@
     "json": {
       "name": "4IKxgaJ1dVBduu3I.json",
       "path": "n8n/workflows/4IKxgaJ1dVBduu3I.json",
-      "sha": "dd518ff0784d6574aabd191b2989ebd7df920d3b",
-      "size": 67,
+      "sha": "d855c34fed54aa0f39f1fa63ab9ce4c6f6491d15",
+      "size": 1248,
       "url": "https://api.github.com/repos/fer/atomicflow/contents/n8n/workflows/4IKxgaJ1dVBduu3I.json?ref=main",
       "html_url": "https://github.com/fer/atomicflow/blob/main/n8n/workflows/4IKxgaJ1dVBduu3I.json",
-      "git_url": "https://api.github.com/repos/fer/atomicflow/git/blobs/dd518ff0784d6574aabd191b2989ebd7df920d3b",
+      "git_url": "https://api.github.com/repos/fer/atomicflow/git/blobs/d855c34fed54aa0f39f1fa63ab9ce4c6f6491d15",
       "download_url": "https://raw.githubusercontent.com/fer/atomicflow/main/n8n/workflows/4IKxgaJ1dVBduu3I.json",
       "type": "file",
-      "content": "ewogICJlcnJvciI6ICJUaGUgcmVzb3VyY2UgeW91IGFyZSByZXF1ZXN0aW5n\nIGNvdWxkIG5vdCBiZSBmb3VuZCIKfQ==\n",
+      "content": "ewogICIwIjogewogICAgImpzb24iOiB7CiAgICAgICJuYW1lIjogIjRJS3hn\nYUoxZFZCZHV1M0kuanNvbiIsCiAgICAgICJwYXRoIjogIm44bi93b3JrZmxv\nd3MvNElLeGdhSjFkVkJkdXUzSS5qc29uIiwKICAgICAgInNoYSI6ICJkZDUx\nOGZmMDc4NGQ2NTc0YWFiZDE5MWIyOTg5ZWJkN2RmOTIwZDNiIiwKICAgICAg\nInNpemUiOiA2NywKICAgICAgInVybCI6ICJodHRwczovL2FwaS5naXRodWIu\nY29tL3JlcG9zL2Zlci9hdG9taWNmbG93L2NvbnRlbnRzL244bi93b3JrZmxv\nd3MvNElLeGdhSjFkVkJkdXUzSS5qc29uP3JlZj1tYWluIiwKICAgICAgImh0\nbWxfdXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS9mZXIvYXRvbWljZmxvdy9i\nbG9iL21haW4vbjhuL3dvcmtmbG93cy80SUt4Z2FKMWRWQmR1dTNJLmpzb24i\nLAogICAgICAiZ2l0X3VybCI6ICJodHRwczovL2FwaS5naXRodWIuY29tL3Jl\ncG9zL2Zlci9hdG9taWNmbG93L2dpdC9ibG9icy9kZDUxOGZmMDc4NGQ2NTc0\nYWFiZDE5MWIyOTg5ZWJkN2RmOTIwZDNiIiwKICAgICAgImRvd25sb2FkX3Vy\nbCI6ICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vZmVyL2F0\nb21pY2Zsb3cvbWFpbi9uOG4vd29ya2Zsb3dzLzRJS3hnYUoxZFZCZHV1M0ku\nanNvbiIsCiAgICAgICJ0eXBlIjogImZpbGUiLAogICAgICAiY29udGVudCI6\nICJld29nSUNKbGNuSnZjaUk2SUNKVWFHVWdjbVZ6YjNWeVkyVWdlVzkxSUdG\neVpTQnlaWEYxWlhOMGFXNW5cbklHTnZkV3hrSUc1dmRDQmlaU0JtYjNWdVpD\nSUtmUT09XG4iLAogICAgICAiZW5jb2RpbmciOiAiYmFzZTY0IiwKICAgICAg\nIl9saW5rcyI6IHsKICAgICAgICAic2VsZiI6ICJodHRwczovL2FwaS5naXRo\ndWIuY29tL3JlcG9zL2Zlci9hdG9taWNmbG93L2NvbnRlbnRzL244bi93b3Jr\nZmxvd3MvNElLeGdhSjFkVkJkdXUzSS5qc29uP3JlZj1tYWluIiwKICAgICAg\nICAiZ2l0IjogImh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vcmVwb3MvZmVyL2F0\nb21pY2Zsb3cvZ2l0L2Jsb2JzL2RkNTE4ZmYwNzg0ZDY1NzRhYWJkMTkxYjI5\nODllYmQ3ZGY5MjBkM2IiLAogICAgICAgICJodG1sIjogImh0dHBzOi8vZ2l0\naHViLmNvbS9mZXIvYXRvbWljZmxvdy9ibG9iL21haW4vbjhuL3dvcmtmbG93\ncy80SUt4Z2FKMWRWQmR1dTNJLmpzb24iCiAgICAgIH0sCiAgICAgICJnaXRo\ndWJfc3RhdHVzIjogImRpZmZlcmVudCIKICAgIH0sCiAgICAicGFpcmVkSXRl\nbSI6IHsKICAgICAgIml0ZW0iOiAwCiAgICB9CiAgfQp9\n",
       "encoding": "base64",
       "_links": {
         "self": "https://api.github.com/repos/fer/atomicflow/contents/n8n/workflows/4IKxgaJ1dVBduu3I.json?ref=main",
-        "git": "https://api.github.com/repos/fer/atomicflow/git/blobs/dd518ff0784d6574aabd191b2989ebd7df920d3b",
+        "git": "https://api.github.com/repos/fer/atomicflow/git/blobs/d855c34fed54aa0f39f1fa63ab9ce4c6f6491d15",
         "html": "https://github.com/fer/atomicflow/blob/main/n8n/workflows/4IKxgaJ1dVBduu3I.json"
       },
       "github_status": "different"
