@@ -1,684 +1,770 @@
 {
   "active": false,
   "connections": {
-    "Globals": {
+    "POST /api/v1/registry": {
       "main": [
         [
           {
-            "node": "GitHub - get all files",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge globals and files",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Set name and content": {
-      "main": [
-        [
-          {
-            "node": "Merge Github and n8n workflows - Keep only non existing workflows based on the name",
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "On clicking 'execute'": {
+    "Google Sheets1": {
       "main": [
         [
           {
-            "node": "Globals",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "n8n - get all workflows",
+            "node": "Get row number",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "GitHub - get all files": {
+    "Edit Fields": {
       "main": [
         [
           {
-            "node": "Merge globals and files",
+            "node": "Google Sheets1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "GitHub - get each file": {
+    "Get row number": {
       "main": [
         [
           {
-            "node": "Set name and content",
+            "node": "Remove row & qty",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Merge globals and files": {
+    "Get Products": {
       "main": [
         [
           {
-            "node": "GitHub - get each file",
+            "node": "Filter Active Products",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "n8n - get all workflows": {
+    "Filter Active Products": {
       "main": [
         [
           {
-            "node": "Set n8n existing workflows names",
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "If workflow already exists": {
+    "Remove row & qty": {
       "main": [
         [
           {
-            "node": "n8n - create workflow",
+            "node": "Respond with Registry Completed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET /api/v1/products": {
+      "main": [
+        [
+          {
+            "node": "Get Products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST /api/v1/validate_member": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "isNull",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isNull": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Workflow name already exists",
+            "node": "Error JSON",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set n8n existing workflows names": {
+    "Error JSON": {
       "main": [
         [
           {
-            "node": "Merge Github and n8n workflows - Keep only non existing workflows based on the name",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "Merge Github and n8n workflows - Keep only non existing workflows based on the name": {
-      "main": [
-        [
-          {
-            "node": "If workflow already exists",
+            "node": "Respond to Webhook2",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Globals1": {
-      "main": [
-        [
-          {
-            "node": "GitHub - get all files1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge globals and files1",
-            "type": "main",
-            "index": 1
-          }
-        ]
-      ]
-    },
-    "If workflow already exists1": {
-      "main": [
-        [
-          {
-            "node": "Restore n8n Credentials",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Workflow name already exists1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GitHub - get all files1": {
-      "main": [
-        [
-          {
-            "node": "Merge globals and files1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GitHub - get each file1": {
-      "main": [
-        [
-          {
-            "node": "Set name and content1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set name and content1": {
-      "main": [
-        [
-          {
-            "node": "Merge Github and n8n workflows - Keep only non existing workflows based on the name1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge globals and files1": {
-      "main": [
-        [
-          {
-            "node": "GitHub - get each file1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Merge Github and n8n workflows - Keep only non existing workflows based on the name1": {
-      "main": [
-        [
-          {
-            "node": "If workflow already exists1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Globals1",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Merge Github and n8n workflows - Keep only non existing workflows based on the name1",
-            "type": "main",
-            "index": 1
           }
         ]
       ]
     }
   },
-  "createdAt": "2025-05-08T18:40:48.977Z",
-  "id": "MG2pl2jHPW6gFBk5",
+  "createdAt": "2025-05-08T18:40:48.959Z",
+  "id": "Ny3yN3einj0f7UAA",
   "meta": null,
-  "name": "Restore from GH",
+  "name": "🏷️ XLS Webshop",
   "nodes": [
     {
-      "parameters": {},
-      "id": "d2c35251-3e46-4ba3-a648-9fd257901694",
-      "name": "On clicking 'execute'",
-      "type": "n8n-nodes-base.manualTrigger",
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
       "position": [
-        -340,
-        440
+        380,
+        160
       ],
-      "typeVersion": 1
+      "id": "3ca31b1d-8803-412e-a58d-81893a22df8a",
+      "name": "Respond to Webhook"
     },
     {
       "parameters": {
-        "values": {
-          "string": [
+        "httpMethod": "POST",
+        "path": "xls-webshop/api/v1/registry",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        -120
+      ],
+      "id": "b83cacaa-c2b6-4c8d-bfef-c90950c0c04d",
+      "name": "POST /api/v1/registry",
+      "webhookId": "5b9b95b7-4e04-4eed-9acd-b5ca7a187404"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 672246945,
+          "mode": "list",
+          "cachedResultName": "registry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=672246945"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "={{ $json.user_id }}",
+            "product_id": "={{ $json.product_id }}",
+            "quantity": "={{ $json.quantity }}",
+            "total": "={{ $json.total }}",
+            "payment_id": "={{ $json.payment_id }}",
+            "timestamp": "={{ $json.timestamp }}",
+            "payment_code": "={{ $json.payment_id === 2 ? Array.from({ length: 6 }, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(Math.floor(Math.random() * 62))).join('') : '' }}"
+          },
+          "matchingColumns": [],
+          "schema": [
             {
-              "name": "repo.owner",
-              "value": "atomicflow"
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
             },
             {
-              "name": "repo.name",
-              "value": "backup"
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
             },
             {
-              "name": "repo.path",
-              "value": "workflows"
+              "id": "quantity",
+              "displayName": "quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total",
+              "displayName": "total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "payment_id",
+              "displayName": "payment_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "payment_code",
+              "displayName": "payment_code",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
-      "id": "81175623-5072-438a-ab5e-30f2fb1908b2",
-      "name": "Globals",
-      "type": "n8n-nodes-base.set",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        -140,
-        340
+        160,
+        -120
       ],
-      "typeVersion": 1
+      "id": "4c9efc6f-34e0-49f2-a695-15152dfc21d1",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
     },
     {
       "parameters": {
-        "content": "## Restore Workflow from GitHub\nThis workflow will restore backed-up workflows from Github. \nIt is launch by testing the workflow\n\n### Setup\nOpen Globals and update the values below\n**repo.owner:** This is your Github username\n**repo.name:** This is the name of your repository\n**repo.path:** This is the folder where your workflows are saved, within the repository.\n\nIf your username was `n8n-io` and your repository was called `n8n-backups` and you wanted the workflows to go into a `workflows` folder you would set:\n\nrepo.owner - n8n-io\nrepo.name - n8n-backups\nrepo.path - workflows",
-        "height": 464.79920462713443,
-        "width": 389.78906250000017,
-        "color": 2
+        "mode": "raw",
+        "jsonOutput": "={{ \n  Object.assign(\n    {}, \n    $json.body, \n    { \n      timestamp: new Date().toISOString().slice(0, 23).replace('T', ' ')\n    }\n  ) \n}}",
+        "options": {}
       },
-      "id": "a0a6b209-d2a9-4dac-a965-35d384d5ccd5",
-      "name": "Note",
-      "type": "n8n-nodes-base.stickyNote",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        -780,
-        260
+        -60,
+        -120
       ],
-      "typeVersion": 1
+      "id": "944ba8be-1c6d-49bc-9c86-958d32f2948f",
+      "name": "Edit Fields"
     },
     {
-      "parameters": {},
-      "id": "5295a346-2c3a-484e-833c-ed706dc164ee",
-      "name": "Workflow name already exists",
-      "type": "n8n-nodes-base.noOp",
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 672246945,
+          "mode": "list",
+          "cachedResultName": "registry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=672246945"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "payment_code",
+              "lookupValue": "={{ $json.payment_code }}"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        1540,
-        540
+        380,
+        -120
       ],
-      "typeVersion": 1
+      "id": "4fde8564-0077-4243-9e4c-b42d4f0bc645",
+      "name": "Get row number",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        820,
+        -120
+      ],
+      "id": "28d2fda6-899c-45a0-8a90-9fe8a11a4395",
+      "name": "Respond with Registry Completed"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "products",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=0"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "detectAutomatically"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -60,
+        160
+      ],
+      "id": "096f0167-aa72-41e8-8706-13bd02e86cca",
+      "name": "Get Products",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
     },
     {
       "parameters": {
         "conditions": {
           "options": {
-            "leftValue": "",
             "caseSensitive": true,
-            "typeValidation": "strict"
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
           },
-          "combinator": "and",
           "conditions": [
             {
-              "id": "063d51c7-0b7a-48a4-82b3-76b370fc4265",
+              "id": "395f63f0-a492-47d6-a3ec-eeb87163801d",
+              "leftValue": "={{ $json.active }}",
+              "rightValue": "={{ true }}",
               "operator": {
                 "type": "string",
-                "operation": "exists",
-                "singleValue": true
-              },
-              "leftValue": "={{ $('Merge Github and n8n workflows - Keep only non existing workflows based on the name').item.json.name }}",
-              "rightValue": ""
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "5b4486f3-c325-4ea8-a235-9056091fdc02",
-      "name": "If workflow already exists",
-      "type": "n8n-nodes-base.if",
-      "position": [
-        1220,
-        420
-      ],
-      "typeVersion": 2
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "6be8c184-8fb7-47a9-ad42-d0dc3db1eea4",
-              "name": "name",
-              "type": "string",
-              "value": "={{ $json.name }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "a060398f-771b-46f7-b103-6f63958efa81",
-      "name": "Set n8n existing workflows names",
-      "type": "n8n-nodes-base.set",
-      "position": [
-        680,
-        540
-      ],
-      "typeVersion": 3.3
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "operation": "list",
-        "owner": {
-          "__rl": true,
-          "value": "={{ $json.repo.owner }}",
-          "mode": "name"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "={{ $json.repo.name }}",
-          "mode": "name"
-        },
-        "filePath": "={{ $json.repo.path }}"
-      },
-      "id": "8d58f572-2011-4cbc-b24d-dc50f14214fd",
-      "name": "GitHub - get all files",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        80,
-        200
-      ],
-      "typeVersion": 1,
-      "webhookId": "183176d3-6394-4d5f-8461-6912741fb282",
-      "credentials": {
-        "githubApi": {
-          "id": "iGQWomWxVx4FvkiE",
-          "name": "GitHub account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "filters": {},
-        "requestOptions": {}
-      },
-      "id": "63360653-10b9-4b56-913a-1e2c9f5168e8",
-      "name": "n8n - get all workflows",
-      "type": "n8n-nodes-base.n8n",
-      "position": [
-        -140,
-        540
-      ],
-      "typeVersion": 1,
-      "credentials": {
-        "n8nApi": {
-          "id": "bvv7auGFkoB3ieA4",
-          "name": "n8n account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $json.repo.owner }}"
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $json.repo.name }}"
-        },
-        "filePath": "={{ $json.path }}",
-        "asBinaryProperty": false,
-        "additionalParameters": {}
-      },
-      "id": "813f4a1d-1c90-4af1-b499-a8ba94f69110",
-      "name": "GitHub - get each file",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        500,
-        320
-      ],
-      "typeVersion": 1,
-      "webhookId": "05b63214-075a-449f-8e34-6487e1e43f21",
-      "credentials": {
-        "githubApi": {
-          "id": "iGQWomWxVx4FvkiE",
-          "name": "GitHub account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "714b0cfd-9f06-4e2f-b73d-30ef39dc40e3",
-              "name": "content",
-              "type": "string",
-              "value": "={{ $json.content.base64Decode() }}"
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
             },
             {
-              "id": "6f48ed58-d55a-4ee4-8cf2-373941aaa341",
-              "name": "name",
-              "type": "string",
-              "value": "={{ $json.name.replace(\".json\", \"\") }}"
+              "id": "65cd50e9-ebed-470c-81fd-9764f785f26d",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        160
+      ],
+      "id": "a7868d48-dc58-424d-81de-b1ded23b3ebb",
+      "name": "Filter Active Products"
+    },
+    {
+      "parameters": {
+        "content": "## API: Create Registry Entry\n",
+        "height": 220,
+        "width": 1480
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        -180
+      ],
+      "id": "01b8c9fa-043f-47a0-aae8-efc3b81e86e8",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "## API: Get Active Products\n\n",
+        "height": 220,
+        "width": 1020
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        100
+      ],
+      "id": "c2d727c6-4c0e-4bbb-9ee5-2a0be77c2e1a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4e26703f-6136-444e-b942-780047722512",
+              "name": "user_id",
+              "value": "={{ $json.user_id }}",
+              "type": "number"
+            },
+            {
+              "id": "091f5acc-dc6b-46c8-937f-f7410766afcd",
+              "name": "payment_code",
+              "value": "={{ $json.payment_code }}",
+              "type": "string"
+            },
+            {
+              "id": "5b0461b0-36d1-452e-a98a-946ff2a17776",
+              "name": "payment_id",
+              "value": "={{ $json.payment_id }}",
+              "type": "number"
+            },
+            {
+              "id": "56326098-f429-46f9-adcc-515c27f3c8f3",
+              "name": "total",
+              "value": "={{ $json.total }}",
+              "type": "number"
+            },
+            {
+              "id": "32819a4c-fdda-476b-b860-fb6fe4ad50bf",
+              "name": "timestamp",
+              "value": "={{ $json.timestamp }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "7c228ff5-486e-4d59-973d-29cc42391053",
-      "name": "Set name and content",
       "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        700,
-        320
+        600,
+        -120
       ],
-      "typeVersion": 3.3
+      "id": "8f64f5cd-fc1a-46f9-ac26-0b6144b4a80a",
+      "name": "Remove row & qty"
     },
     {
       "parameters": {
-        "operation": "create",
-        "workflowObject": "={{ $('Set name and content').item.json.content }}",
-        "requestOptions": {}
+        "path": "xls-webshop/api/v1/products",
+        "responseMode": "responseNode",
+        "options": {}
       },
-      "id": "9b7a79fa-2dbf-4c45-babc-1d3786ab487a",
-      "name": "n8n - create workflow",
-      "type": "n8n-nodes-base.n8n",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
       "position": [
-        1540,
-        320
+        -280,
+        160
       ],
+      "id": "72e3b3c4-2f66-4bc2-801c-875cda38f460",
+      "name": "GET /api/v1/products",
+      "webhookId": "6dd6e84d-8caa-4666-b5a9-e21de00ffad8"
+    },
+    {
+      "parameters": {
+        "content": "## API: Validate member\n\n",
+        "height": 380,
+        "width": 1580
+      },
+      "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
+      "position": [
+        -360,
+        360
+      ],
+      "id": "ae249c27-3c13-4595-90cb-6fde5777e5b0",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## todo\n\n- [ ] xls-webshop to global",
+        "height": 280,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        -160
+      ],
+      "id": "9ee714f5-e59f-481f-84dd-d845a8f87c28",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "xls-webshop/api/v1/validate_member",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        460
+      ],
+      "id": "ff7edfcc-930c-4885-b09a-0735a41897dd",
+      "name": "POST /api/v1/validate_member",
+      "webhookId": "1dff6c08-2597-44da-a305-20644351ce33",
+      "notesInFlow": true,
+      "notes": "validate_member"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 52979391,
+          "mode": "list",
+          "cachedResultName": "users",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=52979391"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -60,
+        460
+      ],
+      "id": "6b6bc8dd-5387-4c45-a6b2-d8c2961be7d8",
+      "name": "Google Sheets",
       "credentials": {
-        "n8nApi": {
-          "id": "bvv7auGFkoB3ieA4",
-          "name": "n8n account"
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
         }
       }
     },
     {
       "parameters": {
-        "content": "## Get all Github files\n1. List all the files from your repository\n2. Get each file as a JSON. \n3. The content, retrieved as base64, is converted in the \"Set Name and Content\" node\n\n\nThe \"Set Name and Content\" node creates a list of workflows with name and content, in order to compare it with the existing n8n workflows in the workspace.",
-        "height": 478.9952882299376,
-        "width": 861.4145066375679,
-        "color": 2
-      },
-      "id": "146a42e8-4dff-4a0d-892d-6cbc28ff977c",
-      "name": "Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        0
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "combinationMode": "multiplex",
-        "options": {}
-      },
-      "id": "14f79f95-f276-488b-bf63-83d444a6706c",
-      "name": "Merge globals and files",
-      "type": "n8n-nodes-base.merge",
-      "position": [
-        300,
-        320
-      ],
-      "typeVersion": 2.1
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "mergeByFields": {
-          "values": [
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
             {
-              "field1": "name",
-              "field2": "name"
+              "id": "edccbbd1-5517-4f4e-afe3-41c41c91b5ee",
+              "leftValue": "={{ $json.user_id }}",
+              "rightValue": "={{ $('POST /api/v1/validate_member').item.json.body.user_id }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
             }
-          ]
+          ],
+          "combinator": "and"
         },
-        "joinMode": "keepNonMatches",
-        "outputDataFrom": "input1",
+        "looseTypeValidation": true,
         "options": {}
       },
-      "id": "6a57cd25-5717-4108-b63d-dbefa8b2b0c9",
-      "name": "Merge Github and n8n workflows - Keep only non existing workflows based on the name",
-      "type": "n8n-nodes-base.merge",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
       "position": [
-        1000,
-        420
+        120,
+        460
       ],
-      "typeVersion": 2.1,
+      "id": "eca55771-2d08-4d8c-841c-99d6ce756afc",
+      "name": "Filter",
       "alwaysOutputData": true
     },
     {
       "parameters": {
-        "content": "## Merge Github and n8n workflows\n\nHere, we only keep the workflows from Github that doesn't already exist in n8n workspace, based on the name",
-        "height": 196.65095879641083,
-        "width": 260.44696745223945,
-        "color": 2
-      },
-      "id": "ec2036b5-1a73-4c1e-9af9-497deda2c233",
-      "name": "Note2",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        920,
-        600
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Create n8n workflow\n\nCreate the n8n workflow using:\n- Content saved in Github\n- Name of the file in Github\n\n\nIf the workflow name already exist in n8n, then the workflow is not created - to avoid duplicates.",
-        "height": 237.66186698228626,
-        "width": 344.0461264465236,
-        "color": 2
-      },
-      "id": "474a686e-f578-4b31-914f-e31bd2602810",
-      "name": "Note3",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        1720,
-        380
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## Get existing n8n workflows\n\n1. Get all workflows\n2. Prepare a list of workflows in order to compare it with the workflows saved in the Github repo.",
-        "height": 182.45487519360773,
-        "width": 378.7476641422645,
-        "color": 2
-      },
-      "id": "157a82af-76f6-4e92-8a44-f20552404713",
-      "name": "Note4",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        80,
-        640
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "content": "## WIP Restore Credentials from GitHub \nThis workflow will restore all instance credentials from GitHub backups.\n\n### Setup\nOpen `Globals` node and update the values below 👇\n\n- **repo.owner:** your Github username\n- **repo.name:** the name of your repository\n- **repo.path:** the folder to use within the repository.\n\n\nIf your username was `john-doe` and your repository was called `n8n-backups` and you wanted the credentials to go into a `credentials` folder you would set:\n\n- repo.owner - john-doe\n- repo.name - n8n-backups\n- repo.path - credentials/\n",
-        "height": 420,
-        "width": 540
-      },
-      "id": "1b98315d-a988-4e50-bf3e-40e423f3b54d",
-      "name": "Sticky Note1",
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -920,
-        1080
-      ],
-      "typeVersion": 1
-    },
-    {
-      "parameters": {
-        "resource": "credential",
-        "name": "={{ $json.data.name }}",
-        "credentialTypeName": "={{ $json.data.type }}",
-        "data": "={{ JSON.stringify($json.data.data) }}",
-        "requestOptions": {}
-      },
-      "id": "eeafbf0c-c680-4c3a-a80d-8b413ad5ea5b",
-      "name": "Restore n8n Credentials",
-      "type": "n8n-nodes-base.n8n",
-      "position": [
-        1140,
-        1260
-      ],
-      "typeVersion": 1,
-      "credentials": {
-        "n8nApi": {
-          "id": "bvv7auGFkoB3ieA4",
-          "name": "n8n account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "values": {
-          "string": [
+        "assignments": {
+          "assignments": [
             {
-              "name": "repo.owner",
-              "value": "atomicflow"
+              "id": "425ad757-2454-4726-8dde-fe5223e53584",
+              "name": "user_id",
+              "value": "={{ $json.user_id }}",
+              "type": "number"
             },
             {
-              "name": "repo.name",
-              "value": "backup"
-            },
-            {
-              "name": "repo.path",
-              "value": "credentials"
+              "id": "57ae38ee-f7d1-400e-9731-8174a56cf395",
+              "name": "nickname",
+              "value": "={{ $json.nickname }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "d6f4e4c5-5a16-4b32-881d-8a30d1aff2be",
-      "name": "Globals1",
       "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        -100,
-        1160
+        340,
+        460
       ],
-      "typeVersion": 1
+      "id": "e10e109f-53f4-45c0-802b-4e69952ed032",
+      "name": "Edit Fields1"
     },
     {
-      "parameters": {},
-      "id": "56441f34-3880-40f8-9f7d-fd32a26e45ef",
-      "name": "Workflow name already exists1",
-      "type": "n8n-nodes-base.noOp",
+      "parameters": {
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
       "position": [
-        1200,
-        1520
+        780,
+        400
       ],
-      "typeVersion": 1
+      "id": "ea065cb1-1fd4-475a-84fd-13e3fd9b1063",
+      "name": "Respond to Webhook1"
     },
     {
       "parameters": {
@@ -687,184 +773,105 @@
             "caseSensitive": true,
             "leftValue": "",
             "typeValidation": "strict",
-            "version": 1
+            "version": 2
           },
           "conditions": [
             {
-              "id": "063d51c7-0b7a-48a4-82b3-76b370fc4265",
+              "id": "46204f60-d99f-4141-9f5d-ec99bb79e090",
+              "leftValue": "={{ $json.nickname }}",
+              "rightValue": "={{null}}",
               "operator": {
                 "type": "string",
-                "operation": "exists",
-                "singleValue": true
-              },
-              "leftValue": "={{ $('Merge Github and n8n workflows - Keep only non existing workflows based on the name1').item.json.name }}",
-              "rightValue": ""
+                "operation": "notEquals"
+              }
             }
           ],
           "combinator": "and"
         },
         "options": {}
       },
-      "id": "3bbf303a-d2c8-4a01-9e4c-dc9b7c5f00ff",
-      "name": "If workflow already exists1",
       "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
       "position": [
-        920,
-        1400
+        560,
+        460
       ],
-      "typeVersion": 2
+      "id": "b46e8998-5bce-4ca2-9c23-d50f864241d9",
+      "name": "isNull"
     },
     {
       "parameters": {
-        "resource": "file",
-        "operation": "list",
-        "owner": {
-          "__rl": true,
-          "value": "={{ $json.repo.owner }}",
-          "mode": "name"
-        },
-        "repository": {
-          "__rl": true,
-          "value": "={{ $json.repo.name }}",
-          "mode": "name"
-        },
-        "filePath": "={{ $json.repo.path }}"
-      },
-      "id": "fcf58529-3db9-4f6e-bd2c-7aca6fffd65e",
-      "name": "GitHub - get all files1",
-      "type": "n8n-nodes-base.github",
-      "position": [
-        120,
-        1020
-      ],
-      "typeVersion": 1,
-      "webhookId": "183176d3-6394-4d5f-8461-6912741fb282",
-      "credentials": {
-        "githubApi": {
-          "id": "iGQWomWxVx4FvkiE",
-          "name": "GitHub account"
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              }
+            ]
+          }
         }
-      }
-    },
-    {
-      "parameters": {
-        "resource": "file",
-        "operation": "get",
-        "owner": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $json.repo.owner }}"
-        },
-        "repository": {
-          "__rl": true,
-          "mode": "name",
-          "value": "={{ $json.repo.name }}"
-        },
-        "filePath": "={{ $json.path }}",
-        "asBinaryProperty": false,
-        "additionalParameters": {}
       },
-      "id": "04a96550-3c92-4290-a024-9e26b3d7fa4d",
-      "name": "GitHub - get each file1",
-      "type": "n8n-nodes-base.github",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
       "position": [
-        540,
-        1140
+        1000,
+        560
       ],
-      "typeVersion": 1,
-      "webhookId": "05b63214-075a-449f-8e34-6487e1e43f21",
-      "retryOnFail": true,
-      "maxTries": 5,
-      "credentials": {
-        "githubApi": {
-          "id": "iGQWomWxVx4FvkiE",
-          "name": "GitHub account"
-        }
-      }
+      "id": "7a711624-e2f9-459f-8039-6d4cff6165c3",
+      "name": "Respond to Webhook2"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "714b0cfd-9f06-4e2f-b73d-30ef39dc40e3",
-              "name": "content",
-              "type": "string",
-              "value": "={{ $json.content.base64Decode() }}"
-            },
-            {
-              "id": "6f48ed58-d55a-4ee4-8cf2-373941aaa341",
-              "name": "name",
-              "type": "string",
-              "value": "={{ $json.name.replace(\".json\", \"\") }}"
+              "id": "4950cdb3-6eb0-47f0-8edf-058aa472f145",
+              "name": "error",
+              "value": "NOT_VALID_MEMBER",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "id": "dd097137-26f8-44e5-bdb1-2213e152ba88",
-      "name": "Set name and content1",
       "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        740,
-        1140
+        780,
+        560
       ],
-      "typeVersion": 3.3
+      "id": "04d3d85d-a604-435f-926e-1f2a4bb3f743",
+      "name": "Error JSON"
     },
     {
       "parameters": {
-        "mode": "combine",
-        "combinationMode": "multiplex",
-        "options": {}
+        "content": "## API Specs \n\n### POST /api/v1/registry\n\nbody:\n```\n{\n \"user_id\": 1,\n \"product_id\": 1,\n \"quantity\": 2,\n \"total\": 50,\n \"payment_id\": 2\n}\n```\n\nResponse:\n```\n[\n  {\n    \"user_id\": 1,\n    \"payment_code\": \"7LRcwV\",\n    \"payment_id\": 2,\n    \"total\": 50,\n    \"timestamp\": \"2025-05-06 17:02:12\"\n  }\n]\n```\n\n### GET /api/v1/products\n\nResponse:\n```\n[\n  {\n    \"row_number\": 2,\n    \"active\": true,\n    \"product_id\": \"tag_1\",\n    \"name\": \"Producto 1\",\n    \"price\": 5.1,\n    \"image_url\": \"https://picsum.photos/200\"\n  },\n  {\n    \"row_number\": 3,\n    \"active\": true,\n    \"product_id\": \"tag_2\",\n    \"name\": \"Producto 2\",\n    \"price\": 4.7,\n    \"image_url\": \"https://picsum.photos/200\"\n  },\n  {\n    \"row_number\": 4,\n    \"active\": true,\n    \"product_id\": \"tag_3\",\n    \"name\": \"Producto 3\",\n    \"price\": 3,\n    \"image_url\": \"https://picsum.photos/200\"\n  },\n  {\n    \"row_number\": 7,\n    \"active\": true,\n    \"product_id\": \"tag_6\",\n    \"name\": \"Producto 6\",\n    \"price\": 5,\n    \"image_url\": \"https://picsum.photos/200\"\n  }\n]\n```\n\n### POST /api/v1/validate_member\n \nbody\n```\n{\n   \"user_id\": 12\n}\n```\n\nResponse Fail:\n\n```\n[\n  {\n    \"error\": \"NOT_VALID_MEMBER\"\n  }\n]\n```\n\nResponse Success:\n\n```\n[\n{ \"user_id\":  1,\n  \"nickname\": \"mabel\"\n}\n]\n```",
+        "height": 1820,
+        "width": 840
       },
-      "id": "8bdb2f39-b6e7-4c8d-b13f-a98fc12cd806",
-      "name": "Merge globals and files1",
-      "type": "n8n-nodes-base.merge",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
       "position": [
-        340,
-        1140
+        -1260,
+        180
       ],
-      "typeVersion": 2.1
-    },
-    {
-      "parameters": {
-        "mode": "combine",
-        "mergeByFields": {
-          "values": [
-            {
-              "field1": "name",
-              "field2": "name"
-            }
-          ]
-        },
-        "joinMode": "keepNonMatches",
-        "outputDataFrom": "input1",
-        "options": {}
-      },
-      "id": "fbd74e6f-5aaf-489c-99d2-420462cf3d4d",
-      "name": "Merge Github and n8n workflows - Keep only non existing workflows based on the name1",
-      "type": "n8n-nodes-base.merge",
-      "position": [
-        700,
-        1400
-      ],
-      "typeVersion": 2.1,
-      "alwaysOutputData": true
-    },
-    {
-      "parameters": {
-        "path": "4fb43156-911f-46cd-a921-c7c964633ef4",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        -340,
-        1340
-      ],
-      "id": "5785584c-495a-4d65-92a9-a8bab99fbc17",
-      "name": "Webhook",
-      "webhookId": "4fb43156-911f-46cd-a921-c7c964633ef4"
+      "id": "a65f21e7-cd9d-4caa-ba06-ae77e161c17f",
+      "name": "Sticky Note4"
     }
   ],
   "pinData": null,
@@ -874,6 +881,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-08T18:40:48.977Z",
-  "versionId": "e0af7a16-9b6b-4b3a-b62a-e9dc24ce866a"
+  "updatedAt": "2025-05-08T18:40:48.959Z",
+  "versionId": "b13a0cf9-30aa-4520-bee6-a84f0c9a4316"
 }
