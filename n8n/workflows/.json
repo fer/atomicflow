@@ -1,161 +1,87 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
-    "When clicking ‘Test workflow’": {
+    "get active workflows": {
       "main": [
         [
           {
-            "node": "MySQL",
+            "node": "Count",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Loop Over S3 \"upload\" files1": {
+    "Merge": {
       "main": [
-        [],
         [
           {
-            "node": "S31",
+            "node": "Rename Keys",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Edit Fields": {
+    "get executions": {
       "main": [
         [
           {
-            "node": "Get \"upload\" S3 bucket files2",
+            "node": "Count Executions",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "S31": {
+    "uptime": {
       "main": [
         [
           {
-            "node": "Qdrant Vector Store",
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Qdrant Vector Store": {
+    "GET": {
       "main": [
         [
           {
-            "node": "Loop Over S3 \"upload\" files1",
+            "node": "get active workflows",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "get executions",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "uptime",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Default Data Loader": {
-      "ai_document": [
-        [
-          {
-            "node": "Qdrant Vector Store",
-            "type": "ai_document",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Embeddings OpenAI": {
-      "ai_embedding": [
-        []
-      ]
-    },
-    "Token Splitter": {
-      "ai_textSplitter": [
-        [
-          {
-            "node": "Default Data Loader",
-            "type": "ai_textSplitter",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get \"upload\" S3 bucket files2": {
+    "POST": {
       "main": [
         [
           {
-            "node": "Loop Over S3 \"upload\" files1",
+            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Embeddings HuggingFace Inference": {
-      "ai_embedding": [
-        [
-          {
-            "node": "Qdrant Vector Store",
-            "type": "ai_embedding",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "MySQL: Create/Update Photo Table": {
+    "Edit Fields1": {
       "main": [
         [
           {
-            "node": "S3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "S3": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Loop Over Items": {
-      "main": [
-        [],
-        [
-          {
-            "node": "MySQL1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Globals MySQL Creation": {
-      "main": [
-        [
-          {
-            "node": "MySQL: Create/Update Photo Table",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "MySQL1": {
-      "main": [
-        [
-          {
-            "node": "Loop Over Items",
+            "node": "Google Sheets",
             "type": "main",
             "index": 0
           }
@@ -166,17 +92,6 @@
       "main": [
         [
           {
-            "node": "MySQL: Retrieve Img Key from UUID",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "S32": {
-      "main": [
-        [
-          {
             "node": "Respond to Webhook",
             "type": "main",
             "index": 0
@@ -184,483 +99,526 @@
         ]
       ]
     },
-    "MySQL: Retrieve Img Key from UUID": {
+    "Rename Keys": {
       "main": [
         [
           {
-            "node": "S32",
+            "node": "API Response",
             "type": "main",
             "index": 0
           }
         ]
       ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Count": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Count Executions": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
     }
   },
-  "createdAt": "2025-05-08T18:40:48.946Z",
-  "id": "InVmvNHLCKInE2lX",
+  "createdAt": "2025-05-08T18:40:48.954Z",
+  "id": "4IKxgaJ1dVBduu3I",
   "meta": null,
-  "name": "🧠 Atomic Anticuario: Initial Processing",
+  "name": "📊 Landing",
   "nodes": [
     {
-      "parameters": {},
-      "type": "n8n-nodes-base.manualTrigger",
+      "parameters": {
+        "filters": {
+          "activeWorkflows": true
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
       "typeVersion": 1,
       "position": [
-        -680,
-        -1340
+        -160,
+        -480
       ],
-      "id": "bce1febf-ded8-4b92-9580-32a8f2c34e5d",
-      "name": "When clicking ‘Test workflow’"
+      "id": "863f74d9-8739-4842-aba6-8207c1f964c6",
+      "name": "get active workflows",
+      "credentials": {
+        "n8nApi": {
+          "id": "bvv7auGFkoB3ieA4",
+          "name": "n8n account"
+        }
+      }
     },
     {
       "parameters": {
-        "content": "## RAG \n- bring files from S3\n- process them",
-        "height": 740,
-        "width": 1400
+        "mode": "combine",
+        "combineBy": "combineByPosition",
+        "numberInputs": 3,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        280,
+        -480
+      ],
+      "id": "0608855e-6193-466f-93f9-c2005025264d",
+      "name": "Merge",
+      "notesInFlow": true,
+      "onError": "continueRegularOutput",
+      "notes": "KPI for workflows and executions"
+    },
+    {
+      "parameters": {
+        "resource": "execution",
+        "returnAll": true,
+        "filters": {},
+        "options": {},
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -280
+      ],
+      "id": "89070522-4848-4b1f-bc5b-3938eb8d62ba",
+      "name": "get executions",
+      "credentials": {
+        "n8nApi": {
+          "id": "bvv7auGFkoB3ieA4",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## KPIs\n\n- [ ] Only allow https://atomicflow.net\n- [x] Add cache",
+        "height": 600,
+        "width": 1940
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -980,
+        -760,
         -720
       ],
-      "id": "3af09b66-9c15-454d-bb26-e27624902669",
+      "id": "4a4e36c5-af9e-419c-b270-351c8a2eeaef",
       "name": "Sticky Note"
     },
     {
       "parameters": {
-        "options": {}
+        "command": "uptime | awk -F'( |,|:)+' '{ \n  if ($7 == \"min\") { print $6 \" minutes\" } \n  else if ($7 == \"sec\") { print $6 \" seconds\" } \n  else if ($7 == \"days\") { print $6 \" days, \" $8 \" hours\" } \n  else { print $6 \" hours, \" $7 \" minutes\" } \n}'"
       },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
       "position": [
-        -480,
-        -580
+        -160,
+        -680
       ],
-      "id": "939cdf87-987a-439d-8f0c-94604ec9ba66",
-      "name": "Loop Over S3 \"upload\" files1"
+      "id": "151c44fb-25ed-4f02-a3de-27de505f20ce",
+      "name": "uptime"
     },
     {
       "parameters": {
-        "bucketName": "={{ $('Edit Fields').item.json.minio_bucket }}",
-        "fileKey": "={{ $('Get \"upload\" S3 bucket files2').item.json.Key }}"
-      },
-      "type": "n8n-nodes-base.s3",
-      "typeVersion": 1,
-      "position": [
-        -220,
-        -560
-      ],
-      "id": "590ba180-d790-42e4-8493-b4a7a3656498",
-      "name": "S31",
-      "credentials": {
-        "s3": {
-          "id": "KkkaXKuBh0oIHqY7",
-          "name": "S3 account"
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              },
+              {
+                "name": "Cache-Control",
+                "value": "public, max-age=300"
+              },
+              {
+                "name": "ETag",
+                "value": "={{ $json.etag || 'default-hash' }}"
+              }
+            ]
+          }
         }
-      }
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "205085ef-42e1-4766-bf23-785eb9dffd2f",
-              "name": "minio_bucket",
-              "value": "upload",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
       },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -920,
-        -580
-      ],
-      "id": "7ede98ac-bf1a-4c49-8f7b-7e4b84aa77bb",
-      "name": "Edit Fields"
-    },
-    {
-      "parameters": {
-        "mode": "insert",
-        "qdrantCollection": {
-          "__rl": true,
-          "value": "atomic-anticuario",
-          "mode": "list",
-          "cachedResultName": "atomic-anticuario"
-        },
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
-      "typeVersion": 1.1,
-      "position": [
-        0,
-        -560
-      ],
-      "id": "ffd7416e-5b0d-483a-ac85-ecee1ca56065",
-      "name": "Qdrant Vector Store",
-      "credentials": {
-        "qdrantApi": {
-          "id": "56HSSdzgWRSfHmIJ",
-          "name": "QdrantApi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "content": "## Prepare qdrant\n- create collection in Qdrant \"atomic-anticuario\"",
-        "height": 320,
-        "width": 380
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -980,
-        -1100
-      ],
-      "id": "f7252c82-6def-4af7-9b97-f5aa5850ffec",
-      "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "method": "PUT",
-        "url": "http://qdrant:6333/collections/atomic-anticuario",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "api-key",
-              "value": "=mi-api-key-secreta"
-            }
-          ]
-        },
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "{\n  \"vectors\": {\n    \"size\": 1536,\n    \"distance\": \"Cosine\"\n  }\n}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        -920,
-        -980
-      ],
-      "id": "8d49276b-9552-4fb2-8b89-084798ed8900",
-      "name": "HTTP Request"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
-      "typeVersion": 1,
-      "position": [
-        140,
-        -320
-      ],
-      "id": "8ef2ef66-2be1-46a0-9c9e-c5f0af7ab8a0",
-      "name": "Default Data Loader"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.2,
       "position": [
-        -300,
-        -140
+        720,
+        -480
       ],
-      "id": "2e97d773-8244-4849-8df0-35d7409d48d6",
-      "name": "Embeddings OpenAI",
-      "credentials": {
-        "openAiApi": {
-          "id": "2CSwwezaeeIGrW2R",
-          "name": "OpenAi account"
-        }
-      }
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.textSplitterTokenSplitter",
-      "typeVersion": 1,
-      "position": [
-        100,
-        -140
-      ],
-      "id": "65eb39f5-7abd-4c6c-a0f2-4c5be8785613",
-      "name": "Token Splitter"
+      "id": "4d7e649b-8f92-4d5d-9d00-1343f8d9f60b",
+      "name": "API Response",
+      "alwaysOutputData": true,
+      "notes": "Cache-Control to 5 mins"
     },
     {
       "parameters": {
-        "operation": "getAll",
-        "bucketName": "={{ $json.minio_bucket }}",
-        "returnAll": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.s3",
-      "typeVersion": 1,
-      "position": [
-        -700,
-        -580
-      ],
-      "id": "3e88dd18-741a-4a56-a6ee-6aa22ae26269",
-      "name": "Get \"upload\" S3 bucket files2",
-      "credentials": {
-        "s3": {
-          "id": "KkkaXKuBh0oIHqY7",
-          "name": "S3 account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "modelName": "sentence-transformers/all-MiniLM-L6-v2",
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.embeddingsHuggingFaceInference",
-      "typeVersion": 1,
-      "position": [
-        -60,
-        -300
-      ],
-      "id": "6ee6d17f-d257-4707-be85-226417c3f3d1",
-      "name": "Embeddings HuggingFace Inference",
-      "credentials": {
-        "huggingFaceApi": {
-          "id": "2ysyPKA3g29bmo2g",
-          "name": "HuggingFaceApi account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "content": "## Image URLS\n\n## MySQL\n- Create picture schema\n- Iterar S3 bucket \n   - Download\n   - Generar MD5\n   - Ingresar entrada\n\n\n\n\n\n\n### Webhook\n- Use md5 as param\n- SQL Query\n- Webhook response\n",
-        "height": 500,
-        "width": 1960
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -980,
-        -2020
-      ],
-      "id": "bad68f88-4cab-41b8-88d5-9f0574cc0559",
-      "name": "Sticky Note2"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "CREATE TABLE IF NOT EXISTS photo_references (\n  id CHAR(36) PRIMARY KEY,\n  object_key VARCHAR(255) NOT NULL,\n  bucket_name VARCHAR(63) NOT NULL,\n  uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        -440,
-        -1960
-      ],
-      "id": "0b7be820-75fc-4948-abc3-c3c323d00dbf",
-      "name": "MySQL: Create/Update Photo Table",
-      "credentials": {
-        "mySql": {
-          "id": "XOq9HrWGDTXCAcdE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "getAll",
-        "bucketName": "={{ $('Globals MySQL Creation').item.json.bucket_name }}",
-        "returnAll": true,
-        "options": {}
-      },
-      "type": "n8n-nodes-base.s3",
-      "typeVersion": 1,
-      "position": [
-        -220,
-        -1960
-      ],
-      "id": "9a81f092-1e0c-40f3-a240-ccc410dc51b2",
-      "name": "S3",
-      "credentials": {
-        "s3": {
-          "id": "KkkaXKuBh0oIHqY7",
-          "name": "S3 account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.splitInBatches",
-      "typeVersion": 3,
-      "position": [
-        0,
-        -1960
-      ],
-      "id": "cb5836e1-28e7-4931-ba2a-3917a95e9e6c",
-      "name": "Loop Over Items"
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "8df1e8f0-0a9e-416b-83e8-a5c74c7920e1",
-              "name": "bucket_name",
-              "value": "upload",
-              "type": "string"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        -660,
-        -1960
-      ],
-      "id": "12b4af11-d8bf-4b9a-a75e-087b78e95f3f",
-      "name": "Globals MySQL Creation"
-    },
-    {
-      "parameters": {
-        "operation": "executeQuery",
-        "query": "INSERT INTO photo_references (id, object_key, bucket_name)\nVALUES (UUID(), '{{ $json.Key }}', '{{ $('Globals MySQL Creation').item.json.bucket_name }}');",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        240,
-        -1940
-      ],
-      "id": "d464e268-8dca-4d7c-9430-54a3e9d35f43",
-      "name": "MySQL1",
-      "credentials": {
-        "mySql": {
-          "id": "XOq9HrWGDTXCAcdE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "photo_references",
-          "mode": "list",
-          "cachedResultName": "photo_references"
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
-      "position": [
-        -460,
-        -1340
-      ],
-      "id": "6118e958-552a-46b7-bbfa-0b43db4a4566",
-      "name": "MySQL",
-      "credentials": {
-        "mySql": {
-          "id": "XOq9HrWGDTXCAcdE",
-          "name": "MySQL account"
-        }
-      }
-    },
-    {
-      "parameters": {
-        "path": "img/:bucket/:uuid",
+        "path": "af/api/landing/kpis",
         "responseMode": "responseNode",
         "options": {}
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -680,
-        -1700
+        -380,
+        -480
       ],
-      "id": "f90b665d-f185-410c-8562-21963c4ed0cf",
-      "name": "Webhook",
-      "webhookId": "6d233acc-53a5-413e-9940-2680da7e321e"
+      "id": "d593425a-e959-441b-af17-ffbde6189029",
+      "name": "GET",
+      "webhookId": "47e11daa-b68b-4b99-ba9d-152d0c8910ee",
+      "notesInFlow": true,
+      "notes": "af/api/landing/kpis"
     },
     {
       "parameters": {
-        "bucketName": "={{ $('Webhook').item.json.params.bucket }}",
-        "fileKey": "={{ $json.object_key }}"
+        "httpMethod": "POST",
+        "path": "af/api/landing/contact-form",
+        "options": {}
       },
-      "type": "n8n-nodes-base.s3",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        -940
+      ],
+      "id": "da5ebb65-5da4-479e-bbdc-7be31b1eb08d",
+      "name": "POST",
+      "webhookId": "80caf4ec-f624-442d-9985-f58c40426255",
+      "notesInFlow": true,
+      "notes": "af/api/landing/contact-form"
+    },
+    {
+      "parameters": {
+        "content": "## Contact Form\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 220,
+        "width": 1940
+      },
+      "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -240,
-        -1700
+        -760,
+        -980
       ],
-      "id": "834cdb93-3cfd-4d56-80a6-fd2aca9ceb7e",
-      "name": "S32",
+      "id": "1feea1c2-8ee0-48de-b416-f69c2767b749",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1xgHott11ekDFwCu2GRTqDWRpDCjH1J43S8IcjNHDajE",
+          "mode": "list",
+          "cachedResultName": "Contact Form",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xgHott11ekDFwCu2GRTqDWRpDCjH1J43S8IcjNHDajE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Inbox",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1xgHott11ekDFwCu2GRTqDWRpDCjH1J43S8IcjNHDajE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "headers",
+              "displayName": "headers",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "params",
+              "displayName": "params",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "query",
+              "displayName": "query",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "body",
+              "displayName": "body",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "webhookUrl",
+              "displayName": "webhookUrl",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "executionMode",
+              "displayName": "executionMode",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        60,
+        -940
+      ],
+      "id": "4c39418d-5b57-4e6c-b1ce-ff95b7a86150",
+      "name": "Google Sheets",
       "credentials": {
-        "s3": {
-          "id": "KkkaXKuBh0oIHqY7",
-          "name": "S3 account"
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
         }
       }
     },
     {
       "parameters": {
-        "respondWith": "binary",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.2,
-      "position": [
-        -20,
-        -1700
-      ],
-      "id": "ca88351c-482a-4f88-aece-aae6def80a5d",
-      "name": "Respond to Webhook"
-    },
-    {
-      "parameters": {
-        "operation": "select",
-        "table": {
-          "__rl": true,
-          "value": "photo_references",
-          "mode": "list",
-          "cachedResultName": "photo_references"
-        },
-        "returnAll": true,
-        "where": {
-          "values": [
+        "assignments": {
+          "assignments": [
             {
-              "column": "id",
-              "value": "={{ $json.params.uuid }}"
+              "id": "4f816380-bba4-40e2-b5e6-0d15335b42a6",
+              "name": "body",
+              "value": "={{ $json.body }}",
+              "type": "object"
             }
           ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.mySql",
-      "typeVersion": 2.4,
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        -460,
-        -1700
+        -160,
+        -940
       ],
-      "id": "0b56baef-b750-4801-bc04-245bfd997a00",
-      "name": "MySQL: Retrieve Img Key from UUID",
-      "credentials": {
-        "mySql": {
-          "id": "XOq9HrWGDTXCAcdE",
-          "name": "MySQL account"
+      "id": "26c95670-566a-4d1b-bf53-bea1402a9b49",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "path": "dummy-website",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -380,
+        -1180
+      ],
+      "id": "798652ae-6827-4152-ad98-95d9e61ac1f9",
+      "name": "Webhook",
+      "webhookId": "270ca0a7-867b-49d5-a59b-7c2d0a5f00aa"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Welcome to 🤡 The Internet</title>\n  <style>\n    body {\n      background-color: #ff69b4;\n      color: lime;\n      font-family: Comic Sans MS, cursive, sans-serif;\n      text-align: center;\n      padding-top: 20%;\n      animation: flash 0.5s infinite;\n    }\n    @keyframes flash {\n      0%   { background-color: #ff69b4; color: lime; }\n      50%  { background-color: yellow; color: red; }\n      100% { background-color: #ff69b4; color: lime; }\n    }\n    marquee {\n      font-size: 24px;\n      font-weight: bold;\n    }\n  </style>\n</head>\n<body>\n  <h1>🚧 Welcome to my NGINX SERVER 🚧</h1>\n  <marquee behavior=\"alternate\" scrollamount=\"20\">⚠️ UNDER CONSTRUCTION SINCE 1999 ⚠️</marquee>\n  <p>If you're seeing this... it worked? I guess?</p>\n  <img src=\"https://media.tenor.com/1J4MSsEFqTkAAAAC/clown.gif\" alt=\"Clown\" width=\"200\">\n  <p><i>This will self-destruct in... never.</i></p>\n</body>\n</html>",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/html; charset=UTF-8"
+              }
+            ]
+          }
         }
-      }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        -160,
+        -1180
+      ],
+      "id": "f107c018-bcd7-499e-ae34-6d0599252d13",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "content": "## 🤡 Dummy website\n**Double click** to edit me. [Guide](https://docs.n8n.io/workflows/sticky-notes/)",
+        "height": 200,
+        "width": 1940
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        -1220
+      ],
+      "id": "d641a812-8cec-4943-a102-a41182c708bd",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "keys": {
+          "key": [
+            {
+              "currentKey": "stdout",
+              "newKey": "uptime"
+            },
+            {
+              "currentKey": "count_nodes",
+              "newKey": "workflows"
+            },
+            {
+              "currentKey": "count_tags",
+              "newKey": "tags"
+            },
+            {
+              "currentKey": "count_id",
+              "newKey": "executions"
+            }
+          ]
+        },
+        "additionalOptions": {}
+      },
+      "type": "n8n-nodes-base.renameKeys",
+      "typeVersion": 1,
+      "position": [
+        500,
+        -480
+      ],
+      "id": "32a5a2c9-00aa-4207-b852-010fff775b82",
+      "name": "Rename Keys"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6d3be18d-34cd-41ee-a342-889f63eb5368",
+              "name": "stdout",
+              "value": "={{ $json.stdout }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        60,
+        -680
+      ],
+      "id": "56332295-79bd-468f-90ec-4fce3ee26e0c",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "field": "nodes"
+            },
+            {
+              "field": "tags"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        60,
+        -480
+      ],
+      "id": "394cac12-5386-42db-a98a-c5ae5f4fcf49",
+      "name": "Count",
+      "notesInFlow": true,
+      "notes": "Workflows & Tags"
+    },
+    {
+      "parameters": {
+        "fieldsToSummarize": {
+          "values": [
+            {
+              "field": "id"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.summarize",
+      "typeVersion": 1.1,
+      "position": [
+        60,
+        -280
+      ],
+      "id": "9b31e98f-4bc8-454c-9476-2c7bf4d394d7",
+      "name": "Count Executions"
     }
   ],
   "pinData": null,
@@ -669,7 +627,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 0,
-  "updatedAt": "2025-05-08T18:40:48.946Z",
-  "versionId": "3e834d37-8187-44b4-89d6-c773cc8e4189"
+  "triggerCount": 3,
+  "updatedAt": "2025-05-08T18:45:37.153Z",
+  "versionId": "738b845e-fabe-480d-af9d-51e2ab740900"
 }
