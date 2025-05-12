@@ -3,4 +3,4 @@
 bolt.new generated code for landing page. 
 
 
-[atomicflow.pages.dev](https://atomicflow.net)
+[atomicflow.net](https://atomicflow.net)
