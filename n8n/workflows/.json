@@ -1,741 +1,886 @@
 {
   "active": false,
   "connections": {
-    "Manual Trigger": {
+    "POST /api/v1/registry": {
       "main": [
         [
           {
-            "node": "Set Configuration",
+            "node": "Edit Fields",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Get Access Token": {
+    "Google Sheets1": {
       "main": [
         [
           {
-            "node": "Config Groups URL",
+            "node": "Get row number",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request - Get Events": {
+    "Edit Fields": {
       "main": [
         [
           {
-            "node": "Check if Events pagination?",
+            "node": "Google Sheets1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set next URL": {
+    "Get row number": {
       "main": [
         [
           {
-            "node": "Config Events URL",
+            "node": "Remove row & qty",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Config Events URL": {
-      "main": [
-        []
-      ]
-    },
-    "Config Members URL": {
+    "Get Products": {
       "main": [
         [
           {
-            "node": "HTTP Request - Get Members",
+            "node": "Filter Active Products",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "HTTP Request - Get Members": {
+    "Filter Active Products": {
       "main": [
         [
           {
-            "node": "Check if Members pagination?",
+            "node": "Respond to Webhook",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set next URL1": {
+    "Remove row & qty": {
       "main": [
         [
           {
-            "node": "Config Members URL",
+            "node": "Respond with Registry Completed",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Check if Events pagination?": {
+    "GET /api/v1/products": {
       "main": [
         [
           {
-            "node": "Set next URL",
+            "node": "Get Products",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "POST /api/v1/validate_member": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "isNull",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "isNull": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Load Enums",
+            "node": "Error JSON",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Set next URL2": {
+    "Error JSON": {
       "main": [
         [
           {
-            "node": "Config Groups URL",
+            "node": "Respond to Webhook2",
             "type": "main",
             "index": 0
           }
         ]
-      ]
-    },
-    "Config Groups URL": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request - Get Groups",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "HTTP Request - Get Groups": {
-      "main": [
-        [
-          {
-            "node": "Check if Groups pagination?",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check if Groups pagination?": {
-      "main": [
-        [
-          {
-            "node": "Set next URL2",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Config Members URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Set Configuration": {
-      "main": [
-        [
-          {
-            "node": "Get Access Token",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Check if Members pagination?": {
-      "main": [
-        [
-          {
-            "node": "Set next URL1",
-            "type": "main",
-            "index": 0
-          }
-        ],
-        [
-          {
-            "node": "Config Events URL",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Load Enums": {
-      "main": [
-        [
-          {
-            "node": "Combine all data",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "On form submission": {
-      "main": [
-        [
-          {
-            "node": "Form",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Form": {
-      "main": [
-        []
       ]
     }
   },
-  "createdAt": "2025-05-08T18:40:48.930Z",
-  "id": "a1sgnVRSG9VlJu7i",
+  "createdAt": "2025-05-08T18:40:48.907Z",
+  "id": "lhXK0Dd9md0YAcXz",
   "meta": null,
-  "name": "⛨ Public API Event Logs",
+  "name": "🏷️ XLS Webshop",
   "nodes": [
     {
-      "parameters": {},
-      "name": "Manual Trigger",
-      "type": "n8n-nodes-base.manualTrigger",
-      "typeVersion": 1,
-      "position": [
-        -600,
-        60
-      ],
-      "id": "ed4f359f-67e6-43e4-b17a-cdd4c6333016"
-    },
-    {
       "parameters": {
-        "requestMethod": "POST",
-        "url": "={{ $json.identity_url }}/connect/token",
-        "options": {},
-        "bodyParametersUi": {
-          "parameter": [
-            {
-              "name": "client_id",
-              "value": "={{ $json.client_id }}"
-            },
-            {
-              "name": "client_secret",
-              "value": "={{ $json.client_secret }}"
-            },
-            {
-              "name": "scope",
-              "value": "api.organization"
-            },
-            {
-              "name": "grant_type",
-              "value": "client_credentials"
-            }
-          ]
-        },
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Content-Type",
-              "value": "application/x-www-form-urlencoded"
-            }
-          ]
-        }
+        "respondWith": "allIncomingItems",
+        "options": {}
       },
-      "name": "Get Access Token",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
       "position": [
-        -200,
-        60
+        380,
+        160
       ],
-      "id": "1d2d9b06-3d20-428b-ae79-d702bc63ff34"
+      "id": "3ca31b1d-8803-412e-a58d-81893a22df8a",
+      "name": "Respond to Webhook"
     },
     {
       "parameters": {
-        "url": "={{$node[\"Config Events URL\"].json[\"next\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer  {{ $('Get Access Token').item.json.access_token }}"
-            }
-          ]
-        },
-        "queryParametersUi": {
-          "parameter": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
-        }
+        "httpMethod": "POST",
+        "path": "xls-webshop/api/v1/registry",
+        "responseMode": "responseNode",
+        "options": {}
       },
-      "name": "HTTP Request - Get Events",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
       "position": [
-        220,
-        620
+        -280,
+        -120
       ],
-      "id": "2a06a08e-58eb-4f9e-8ca5-5fb3e8db75be"
+      "id": "b83cacaa-c2b6-4c8d-bfef-c90950c0c04d",
+      "name": "POST /api/v1/registry",
+      "webhookId": "5b9b95b7-4e04-4eed-9acd-b5ca7a187404"
     },
     {
       "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 672246945,
+          "mode": "list",
+          "cachedResultName": "registry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=672246945"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "user_id": "={{ $json.user_id }}",
+            "product_id": "={{ $json.product_id }}",
+            "quantity": "={{ $json.quantity }}",
+            "total": "={{ $json.total }}",
+            "payment_id": "={{ $json.payment_id }}",
+            "timestamp": "={{ $json.timestamp }}",
+            "payment_code": "={{ $json.payment_id === 2 ? Array.from({ length: 6 }, () => 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.charAt(Math.floor(Math.random() * 62))).join('') : '' }}"
+          },
+          "matchingColumns": [],
+          "schema": [
             {
-              "name": "continuationToken",
-              "value": "={{$node[\"HTTP Request - Get Events\"].json[\"continuationToken\"]}}"
+              "id": "user_id",
+              "displayName": "user_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "quantity",
+              "displayName": "quantity",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "total",
+              "displayName": "total",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "payment_id",
+              "displayName": "payment_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "timestamp",
+              "displayName": "timestamp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "payment_code",
+              "displayName": "payment_code",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
             }
-          ]
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
         },
         "options": {}
       },
-      "name": "Set next URL",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
       "position": [
-        600,
-        620
+        160,
+        -120
       ],
-      "executeOnce": true,
-      "id": "75615dfe-2e94-4c9d-95e6-21c48f1c1469"
+      "id": "4c9efc6f-34e0-49f2-a695-15152dfc21d1",
+      "name": "Google Sheets1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
     },
     {
       "parameters": {
-        "functionCode": "const enums = $node[\"Load Enums\"].json;\n\n// Build member map properly across ALL paginated responses:\nconst members = $items(\"HTTP Request - Get Members\");\n\nconst userIdToEmail = {};\nconst memberIdToEmail = {};\n\nfor (const page of members) {\n  const pageData = page.json.data || [];\n  for (const member of pageData) {\n    const userId = member.userId;\n    const memberId = member.id;\n    const memberEmail = member.email || (member.user && member.user.email) || \"Unknown member\";\n    \n    if (userId) {\n      userIdToEmail[userId] = memberEmail;\n    }\n    if (memberId) {\n      memberIdToEmail[memberId] = memberEmail;\n    }\n  }\n}\n\nconst groups = $items(\"HTTP Request - Get Groups\");\n\n\nconst groupMap = {};\n\nfor (const page of groups) {\n  const pageData = page.json.data || [];\n  for (const group of pageData) {\n    const groupId = group.id;  \n    groupMap[groupId] = group.name;\n  }\n}\n\nconsole.log('>>>>', groupMap)\n\n\n// Combine Events and enrich with member names\nconst allData = [];\nlet counter = 0;\n\ndo {\n  try {\n    const items = $items(\"HTTP Request - Get Events\", 0, counter).map(item => item.json.data);\n    const mappedItems = items[0].map(item => {\n      return {\n        json: {\n          ...item,\n          type: enums.EventType[item.type] || item.type,\n          device: enums.DeviceType[item.device] || item.device,\n          actingUserId: userIdToEmail[item.actingUserId] || item.actingUserId,\n          memberId: memberIdToEmail[item.memberId] || item.memberId,\n          groupId: groupMap[item.groupId] || item.groupId\n        }\n      };\n    });\n    allData.push(...mappedItems);\n  } catch (error) {\n    return allData;\n  }\n  counter++;\n} while (true);"
+        "mode": "raw",
+        "jsonOutput": "={{ \n  Object.assign(\n    {}, \n    $json.body, \n    { \n      timestamp: new Date().toISOString().slice(0, 23).replace('T', ' ')\n    }\n  ) \n}}",
+        "options": {}
       },
-      "name": "Combine all data",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        600,
-        900
+        -60,
+        -120
       ],
-      "id": "23e2de89-da22-4f17-8b24-f379167f8360"
+      "id": "944ba8be-1c6d-49bc-9c86-958d32f2948f",
+      "name": "Edit Fields"
     },
     {
       "parameters": {
-        "content": "## Fetch Events",
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 672246945,
+          "mode": "list",
+          "cachedResultName": "registry",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=672246945"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "payment_code",
+              "lookupValue": "={{ $json.payment_code }}"
+            }
+          ]
+        },
+        "options": {
+          "returnFirstMatch": false
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        380,
+        -120
+      ],
+      "id": "4fde8564-0077-4243-9e4c-b42d4f0bc645",
+      "name": "Get row number",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        820,
+        -120
+      ],
+      "id": "28d2fda6-899c-45a0-8a90-9fe8a11a4395",
+      "name": "Respond with Registry Completed"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "products",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=0"
+        },
+        "options": {
+          "dataLocationOnSheet": {
+            "values": {
+              "rangeDefinition": "detectAutomatically"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -60,
+        160
+      ],
+      "id": "096f0167-aa72-41e8-8706-13bd02e86cca",
+      "name": "Get Products",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "395f63f0-a492-47d6-a3ec-eeb87163801d",
+              "leftValue": "={{ $json.active }}",
+              "rightValue": "={{ true }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "65cd50e9-ebed-470c-81fd-9764f785f26d",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        160
+      ],
+      "id": "a7868d48-dc58-424d-81de-b1ded23b3ebb",
+      "name": "Filter Active Products"
+    },
+    {
+      "parameters": {
+        "content": "## API: Create Registry Entry\n",
         "height": 220,
-        "width": 760
+        "width": 1480
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        560
+        -360,
+        -180
       ],
-      "id": "98b22b4b-1ef9-4613-a3ee-03644e356cff",
+      "id": "01b8c9fa-043f-47a0-aae8-efc3b81e86e8",
       "name": "Sticky Note"
     },
     {
       "parameters": {
-        "functionCode": "const config = $items(\"Set Configuration\");\n\nlet next = config[0].json.api_url + '/public/events';\n\nif (items[0].json.continuationToken) {\n  next += '?continuationToken=' + items[0].json.continuationToken;\n}\n\nreturn [{ json: { next: next } }];"
-      },
-      "name": "Config Events URL",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [
-        40,
-        620
-      ],
-      "id": "e8793929-ee98-4831-8b02-d9d9d1178955"
-    },
-    {
-      "parameters": {
-        "functionCode": "const config = $items(\"Set Configuration\");\n\nlet next = config[0].json.api_url + '/public/members';\n\nif (items[0].json.continuationToken) {\n  next += '?continuationToken=' + items[0].json.continuationToken;\n}\n\nreturn [{ json: { next: next } }];"
-      },
-      "name": "Config Members URL",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [
-        40,
-        340
-      ],
-      "id": "eed8801e-9197-4e48-b2fe-5181b378d3a6"
-    },
-    {
-      "parameters": {
-        "url": "={{$node[\"Config Members URL\"].json[\"next\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer  {{ $('Get Access Token').item.json.access_token }}"
-            }
-          ]
-        },
-        "queryParametersUi": {
-          "parameter": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
-        }
-      },
-      "name": "HTTP Request - Get Members",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        220,
-        340
-      ],
-      "id": "7af3172d-5854-41dc-b4f5-e18a26cb51af"
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "continuationToken",
-              "value": "={{$node[\"HTTP Request - Get Members\"].json[\"continuationToken\"]}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Set next URL1",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        600,
-        340
-      ],
-      "executeOnce": true,
-      "id": "49374c9a-f43b-4e63-8df4-01742cf85ca2"
-    },
-    {
-      "parameters": {
-        "content": "## Fetch Members",
+        "content": "## API: Get Active Products\n\n",
         "height": 220,
-        "width": 760,
-        "color": 5
+        "width": 1020
       },
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        0,
-        280
+        -360,
+        100
       ],
-      "id": "fa021ba0-9fe3-4d5d-b342-6532bb28a349",
+      "id": "c2d727c6-4c0e-4bbb-9ee5-2a0be77c2e1a",
       "name": "Sticky Note1"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"HTTP Request - Get Events\"].json[\"continuationToken\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "name": "Check if Events pagination?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        400,
-        620
-      ],
-      "id": "85bad6c7-40c3-4e13-a8e8-4b61a62ad82e"
-    },
-    {
-      "parameters": {
-        "keepOnlySet": true,
-        "values": {
-          "string": [
-            {
-              "name": "continuationToken",
-              "value": "={{$node[\"HTTP Request - Get Groups\"].json[\"continuationToken\"]}}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "name": "Set next URL2",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 1,
-      "position": [
-        600,
-        60
-      ],
-      "executeOnce": true,
-      "id": "ffb92886-a3a8-4694-aef7-41a25a1b12ad"
-    },
-    {
-      "parameters": {
-        "functionCode": "const config = $items(\"Set Configuration\");\n\nlet next = config[0].json.api_url + '/public/groups';\n\nif (items[0].json.continuationToken) {\n  next += '?continuationToken=' + items[0].json.continuationToken;\n}\n\nreturn [{ json: { next: next } }];"
-      },
-      "name": "Config Groups URL",
-      "type": "n8n-nodes-base.function",
-      "typeVersion": 1,
-      "position": [
-        40,
-        60
-      ],
-      "id": "a534cc1c-a007-4a31-b64a-e1c716cd7672"
-    },
-    {
-      "parameters": {
-        "url": "={{$node[\"Config Groups URL\"].json[\"next\"]}}",
-        "options": {},
-        "headerParametersUi": {
-          "parameter": [
-            {
-              "name": "Authorization",
-              "value": "=Bearer  {{ $('Get Access Token').item.json.access_token }}"
-            }
-          ]
-        },
-        "queryParametersUi": {
-          "parameter": [
-            {
-              "name": "limit",
-              "value": "100"
-            }
-          ]
-        }
-      },
-      "name": "HTTP Request - Get Groups",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 1,
-      "position": [
-        220,
-        60
-      ],
-      "id": "d26c47cb-f988-4352-8f9d-fff91269cb1c"
-    },
-    {
-      "parameters": {
-        "conditions": {
-          "string": [
-            {
-              "value1": "={{ $node[\"HTTP Request - Get Groups\"].json[\"continuationToken\"] }}",
-              "operation": "isNotEmpty"
-            }
-          ]
-        }
-      },
-      "name": "Check if Groups pagination?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
-      "position": [
-        400,
-        60
-      ],
-      "id": "22c3a1cb-3b20-4084-9703-ad8d812fa24d"
-    },
-    {
-      "parameters": {
-        "content": "## Fetch Groups",
-        "height": 220,
-        "width": 760,
-        "color": 5
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        0,
-        0
-      ],
-      "id": "57839a0b-c7e3-44a9-8c0f-a0ce7b4c74a4",
-      "name": "Sticky Note2"
-    },
-    {
-      "parameters": {
-        "content": "## To do\n- [ ] Start / End date\n- [ ] LiveEvent Loop\n- [ ] Entry parameters \n  - [ ] Self hosted\n- [ ] Run/Automate with Docker\n- [ ] open ticket to n8n since the BW node isn't handling pagination\n- [ ] Write to disk in different formats",
-        "height": 380,
-        "width": 520,
-        "color": 4
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -600,
-        240
-      ],
-      "id": "69c4bf23-9192-4414-aad1-93f625cbd4cd",
-      "name": "Sticky Note3"
     },
     {
       "parameters": {
         "assignments": {
           "assignments": [
             {
-              "id": "51c8b47a-18de-4cfd-8adc-46403036eed2",
-              "name": "client_id",
-              "value": "organization.9d3210e3-385c-4c76-ad72-b1f5013a8cc2",
+              "id": "4e26703f-6136-444e-b942-780047722512",
+              "name": "user_id",
+              "value": "={{ $json.user_id }}",
+              "type": "number"
+            },
+            {
+              "id": "091f5acc-dc6b-46c8-937f-f7410766afcd",
+              "name": "payment_code",
+              "value": "={{ $json.payment_code }}",
               "type": "string"
             },
             {
-              "id": "8d1bb5ab-f135-4164-a74b-d0a2bfdd93b9",
-              "name": "client_secret",
-              "value": "YDAI5PxNcj9EktCvFpxzqmNhlJ7KiJ",
-              "type": "string"
+              "id": "5b0461b0-36d1-452e-a98a-946ff2a17776",
+              "name": "payment_id",
+              "value": "={{ $json.payment_id }}",
+              "type": "number"
             },
             {
-              "id": "7ae5465f-ee2f-4544-a639-53f0e12c23e7",
-              "name": "identity_url",
-              "value": "https://identity.bitwarden.eu",
-              "type": "string"
+              "id": "56326098-f429-46f9-adcc-515c27f3c8f3",
+              "name": "total",
+              "value": "={{ $json.total }}",
+              "type": "number"
             },
             {
-              "id": "f7896f5a-fef5-4d9c-b633-83fbd01942f9",
-              "name": "api_url",
-              "value": "https://api.bitwarden.eu",
+              "id": "32819a4c-fdda-476b-b860-fb6fe4ad50bf",
+              "name": "timestamp",
+              "value": "={{ $json.timestamp }}",
               "type": "string"
             }
           ]
         },
-        "options": {
-          "ignoreConversionErrors": false
-        }
+        "options": {}
       },
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -400,
-        60
+        600,
+        -120
       ],
-      "id": "939e9f5d-eec9-49c4-a8cf-d42cd80fe498",
-      "name": "Set Configuration"
+      "id": "8f64f5cd-fc1a-46f9-ac26-0b6144b4a80a",
+      "name": "Remove row & qty"
+    },
+    {
+      "parameters": {
+        "path": "xls-webshop/api/v1/products",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        160
+      ],
+      "id": "72e3b3c4-2f66-4bc2-801c-875cda38f460",
+      "name": "GET /api/v1/products",
+      "webhookId": "6dd6e84d-8caa-4666-b5a9-e21de00ffad8"
+    },
+    {
+      "parameters": {
+        "content": "## API: Validate member\n\n",
+        "height": 380,
+        "width": 1580
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        360
+      ],
+      "id": "ae249c27-3c13-4595-90cb-6fde5777e5b0",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## todo\n\n- [ ] xls-webshop to global",
+        "height": 280,
+        "width": 320
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        -160
+      ],
+      "id": "9ee714f5-e59f-481f-84dd-d845a8f87c28",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "xls-webshop/api/v1/validate_member",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        460
+      ],
+      "id": "ff7edfcc-930c-4885-b09a-0735a41897dd",
+      "name": "POST /api/v1/validate_member",
+      "webhookId": "1dff6c08-2597-44da-a305-20644351ce33",
+      "notesInFlow": true,
+      "notes": "validate_member"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk",
+          "mode": "list",
+          "cachedResultName": "XLS Webshop",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 52979391,
+          "mode": "list",
+          "cachedResultName": "users",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1R3XKyzRsCK8u8JBJBbIqDfQe9mh_zODgZar7sg-LXQk/edit#gid=52979391"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        -60,
+        460
+      ],
+      "id": "6b6bc8dd-5387-4c45-a6b2-d8c2961be7d8",
+      "name": "Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "SsVi0rQ6GoQbhK2q",
+          "name": "Google Sheets account"
+        }
+      }
     },
     {
       "parameters": {
         "conditions": {
-          "string": [
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
             {
-              "value1": "={{ $node[\"HTTP Request - Get Members\"].json[\"continuationToken\"] }}",
-              "operation": "isNotEmpty"
+              "id": "edccbbd1-5517-4f4e-afe3-41c41c91b5ee",
+              "leftValue": "={{ $json.user_id }}",
+              "rightValue": "={{ $('POST /api/v1/validate_member').item.json.body.user_id }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
             }
-          ]
-        }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
       },
-      "name": "Check if Members pagination?",
-      "type": "n8n-nodes-base.if",
-      "typeVersion": 1,
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
       "position": [
-        400,
-        340
+        120,
+        460
       ],
-      "id": "c1952070-6d49-4bf5-acd8-eefe35f0ba50"
+      "id": "eca55771-2d08-4d8c-841c-99d6ce756afc",
+      "name": "Filter",
+      "alwaysOutputData": true
     },
     {
       "parameters": {
-        "jsCode": "return [{\n  json: {\n    DeviceType: {\n      0: \"Android\",\n      1: \"iOS\",\n      2: \"ChromeExtension\",\n      3: \"FirefoxExtension\",\n      4: \"OperaExtension\",\n      5: \"EdgeExtension\",\n      6: \"WindowsDesktop\",\n      7: \"MacOsDesktop\",\n      8: \"LinuxDesktop\",\n      9: \"ChromeBrowser\",\n      10: \"FirefoxBrowser\",\n      11: \"OperaBrowser\",\n      12: \"EdgeBrowser\",\n      13: \"IEBrowser\",\n      14: \"UnknownBrowser\",\n      15: \"AndroidAmazon\",\n      16: \"UWP\",\n      17: \"SafariBrowser\",\n      18: \"VivaldiBrowser\",\n      19: \"VivaldiExtension\",\n      20: \"SafariExtension\",\n      21: \"BraveBrowser\",\n      22: \"BraveExtension\",\n    },\n    EventType: {\n      1000: \"User_LoggedIn\",\n      1001: \"User_ChangedPassword\",\n      1002: \"User_Updated2fa\",\n      1003: \"User_Disabled2fa\",\n      1004: \"User_Recovered2fa\",\n      1005: \"User_FailedLogIn\",\n      1006: \"User_FailedLogIn2fa\",\n      1007: \"User_ClientExportedVault\",\n      1008: \"User_UpdatedTempPassword\",\n      1009: \"User_MigratedKeyToKeyConnector\",\n      1010: \"User_RequestedDeviceApproval\",\n      1011: \"User_TdeOffboardingPasswordSet\",\n      1100: \"Cipher_Created\",\n      1101: \"Cipher_Updated\",\n      1102: \"Cipher_Deleted\",\n      1103: \"Cipher_AttachmentCreated\",\n      1104: \"Cipher_AttachmentDeleted\",\n      1105: \"Cipher_Shared\",\n      1106: \"Cipher_UpdatedCollections\",\n      1107: \"Cipher_ClientViewed\",\n      1108: \"Cipher_ClientToggledPasswordVisible\",\n      1109: \"Cipher_ClientToggledHiddenFieldVisible\",\n      1110: \"Cipher_ClientToggledCardCodeVisible\",\n      1111: \"Cipher_ClientCopiedPassword\",\n      1112: \"Cipher_ClientCopiedHiddenField\",\n      1113: \"Cipher_ClientCopiedCardCode\",\n      1114: \"Cipher_ClientAutofilled\",\n      1115: \"Cipher_SoftDeleted\",\n      1116: \"Cipher_Restored\",\n      1117: \"Cipher_ClientToggledCardNumberVisible\",\n      1118: \"Cipher_ClientToggledTOTPSeedVisible\",\n      1300: \"Collection_Created\",\n      1301: \"Collection_Updated\",\n      1302: \"Collection_Deleted\",\n      1400: \"Group_Created\",\n      1401: \"Group_Updated\",\n      1402: \"Group_Deleted\",\n      1500: \"OrganizationUser_Invited\",\n      1501: \"OrganizationUser_Confirmed\",\n      1502: \"OrganizationUser_Updated\",\n      1503: \"OrganizationUser_Removed\",\n      1504: \"OrganizationUser_UpdatedGroups\",\n      1505: \"OrganizationUser_UnlinkedSso\",\n      1506: \"OrganizationUser_ResetPassword_Enroll\",\n      1507: \"OrganizationUser_ResetPassword_Withdraw\",\n      1508: \"OrganizationUser_AdminResetPassword\",\n      1509: \"OrganizationUser_ResetSsoLink\",\n      1510: \"OrganizationUser_FirstSsoLogin\",\n      1511: \"OrganizationUser_Revoked\",\n      1512: \"OrganizationUser_Restored\",\n      1513: \"OrganizationUser_ApprovedAuthRequest\",\n      1514: \"OrganizationUser_RejectedAuthRequest\",\n      1515: \"OrganizationUser_Deleted\",\n      1516: \"OrganizationUser_Left\",\n      1600: \"Organization_Updated\",\n      1601: \"Organization_PurgedVault\",\n      1602: \"Organization_ClientExportedVault\",\n      1603: \"Organization_VaultAccessed\",\n      1604: \"Organization_EnabledSso\",\n      1605: \"Organization_DisabledSso\",\n      1606: \"Organization_EnabledKeyConnector\",\n      1607: \"Organization_DisabledKeyConnector\",\n      1608: \"Organization_SponsorshipsSynced\",\n      1609: \"Organization_CollectionManagementUpdated\",\n      1700: \"Policy_Updated\",\n      1800: \"ProviderUser_Invited\",\n      1801: \"ProviderUser_Confirmed\",\n      1802: \"ProviderUser_Updated\",\n      1803: \"ProviderUser_Removed\",\n      1900: \"ProviderOrganization_Created\",\n      1901: \"ProviderOrganization_Added\",\n      1902: \"ProviderOrganization_Removed\",\n      1903: \"ProviderOrganization_VaultAccessed\",\n      2000: \"OrganizationDomain_Added\",\n      2001: \"OrganizationDomain_Removed\",\n      2002: \"OrganizationDomain_Verified\",\n      2003: \"OrganizationDomain_NotVerified\",\n      2100: \"Secret_Retrieved\"\n    }\n  }\n}]"
-      },
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
-      "position": [
-        400,
-        900
-      ],
-      "id": "5a872387-2279-4d99-aae5-871a07a55c58",
-      "name": "Load Enums"
-    },
-    {
-      "parameters": {
-        "content": "## Combine Data",
-        "height": 220,
-        "width": 760
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        0,
-        840
-      ],
-      "typeVersion": 1,
-      "id": "dfefdbf5-dc7e-4998-bbef-c674944487b1",
-      "name": "Sticky Note4"
-    },
-    {
-      "parameters": {
-        "content": "## Setup Forms\n- [ ] Enter Credentials\n- [ ] Enter Monitor Settings",
-        "height": 260,
-        "width": 500
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "typeVersion": 1,
-      "position": [
-        -640,
-        -440
-      ],
-      "id": "4dd21351-6390-4b13-94b2-c2e9869d02b9",
-      "name": "Sticky Note5"
-    },
-    {
-      "parameters": {
-        "formTitle": "Bitwarden",
-        "formDescription": "formulario",
-        "formFields": {
-          "values": [
+        "assignments": {
+          "assignments": [
             {
-              "fieldLabel": "client_id",
-              "requiredField": true
+              "id": "425ad757-2454-4726-8dde-fe5223e53584",
+              "name": "user_id",
+              "value": "={{ $json.user_id }}",
+              "type": "number"
+            },
+            {
+              "id": "57ae38ee-f7d1-400e-9731-8174a56cf395",
+              "name": "nickname",
+              "value": "={{ $json.nickname }}",
+              "type": "string"
             }
           ]
         },
         "options": {}
       },
-      "type": "n8n-nodes-base.formTrigger",
-      "typeVersion": 2.2,
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        -20,
-        -320
+        340,
+        460
       ],
-      "id": "a0217037-6f59-4369-be8e-5609d769130d",
-      "name": "On form submission",
-      "webhookId": "2046bf13-00e9-4d0d-a700-84d8de8cb48a"
+      "id": "e10e109f-53f4-45c0-802b-4e69952ed032",
+      "name": "Edit Fields1"
     },
     {
       "parameters": {
-        "operation": "completion",
-        "completionTitle": "adios",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        780,
+        400
+      ],
+      "id": "ea065cb1-1fd4-475a-84fd-13e3fd9b1063",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "46204f60-d99f-4141-9f5d-ec99bb79e090",
+              "leftValue": "={{ $json.nickname }}",
+              "rightValue": "={{null}}",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
         "options": {}
       },
-      "type": "n8n-nodes-base.form",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        460
+      ],
+      "id": "b46e8998-5bce-4ca2-9c23-d50f864241d9",
+      "name": "isNull"
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Access-Control-Allow-Methods",
+                "value": "GET, POST, OPTIONS"
+              },
+              {
+                "name": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Authorization"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.2,
+      "position": [
+        1000,
+        560
+      ],
+      "id": "7a711624-e2f9-459f-8039-6d4cff6165c3",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4950cdb3-6eb0-47f0-8edf-058aa472f145",
+              "name": "error",
+              "value": "NOT_VALID_MEMBER",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        780,
+        560
+      ],
+      "id": "04d3d85d-a604-435f-926e-1f2a4bb3f743",
+      "name": "Error JSON"
+    },
+    {
+      "parameters": {
+        "content": "## API Specs \n\n### POST /api/v1/registry\n\nbody:\n```\n{\n \"user_id\": 1,\n \"product_id\": 1,\n \"quantity\": 2,\n \"total\": 50,\n \"payment_id\": 2\n}\n```\n\nResponse:\n```\n[\n  {\n    \"user_id\": 1,\n    \"payment_code\": \"7LRcwV\",\n    \"payment_id\": 2,\n    \"total\": 50,\n    \"timestamp\": \"2025-05-06 17:02:12\"\n  }\n]\n```\n\n### GET /api/v1/products\n\nResponse:\n```\n[\n  {\n    \"row_number\": 2,\n    \"active\": true,\n    \"product_id\": \"tag_1\",\n    \"name\": \"Producto 1\",\n    \"price\": 5.1,\n    \"image_url\": \"https://picsum.photos/200\"\n  },\n  {\n    \"row_number\": 3,\n    \"active\": true,\n    \"product_id\": \"tag_2\",\n    \"name\": \"Producto 2\",\n    \"price\": 4.7,\n    \"image_url\": \"https://picsum.photos/200\"\n  },\n  {\n    \"row_number\": 4,\n    \"active\": true,\n    \"product_id\": \"tag_3\",\n    \"name\": \"Producto 3\",\n    \"price\": 3,\n    \"image_url\": \"https://picsum.photos/200\"\n  },\n  {\n    \"row_number\": 7,\n    \"active\": true,\n    \"product_id\": \"tag_6\",\n    \"name\": \"Producto 6\",\n    \"price\": 5,\n    \"image_url\": \"https://picsum.photos/200\"\n  }\n]\n```\n\n### POST /api/v1/validate_member\n \nbody\n```\n{\n   \"user_id\": 12\n}\n```\n\nResponse Fail:\n\n```\n[\n  {\n    \"error\": \"NOT_VALID_MEMBER\"\n  }\n]\n```\n\nResponse Success:\n\n```\n[\n{ \"user_id\":  1,\n  \"nickname\": \"mabel\"\n}\n]\n```",
+        "height": 1820,
+        "width": 840
+      },
+      "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        200,
-        -320
+        -1260,
+        180
       ],
-      "id": "6257a520-7467-44c4-9cd5-54166c790314",
-      "name": "Form",
-      "webhookId": "d316f4f4-4fe7-4d60-8148-c8354e441538"
+      "id": "a65f21e7-cd9d-4caa-ba06-ae77e161c17f",
+      "name": "Sticky Note4"
     }
   ],
-  "pinData": {},
+  "pinData": null,
   "settings": {
     "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2025-05-08T19:04:54.606Z",
-  "versionId": "3c68fd89-c7f3-4916-b5bf-2cb4af471425"
+  "updatedAt": "2025-05-08T18:40:48.907Z",
+  "versionId": "9bdad229-f26e-47cd-b844-6150fe78bbdf"
 }
