@@ -11,7 +11,15 @@ Tools:
 - age
 
   ```
-  age-keygen -o /data/atomicflow/keys/age.key
+  age-keygen -o /home/fer/server/age.key
 
-  age-keygen -o /home/fer/server/age.key | grep "# public key:" | cut -d ' ' -f 4 > /home/fer/server/age.pub
+  grep -m 1 "# public key:" /home/fer/server/age.key | cut -d ' ' -f 4 > /home/fer/server/age.pub
+  
   ```
+
+- sops
+
+```
+curl -sSL https://github.com/getsops/sops/releases/latest/download/sops_3.8.1_amd64.deb -o sops.deb
+sudo dpkg -i sops.deb
+```
